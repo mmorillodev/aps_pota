@@ -1,38 +1,54 @@
 public class Arrays {
 
-    public static int[] bubbleSort(int[] arr) {
-        return null;
+    static int[] bubbleSort(int[] arr) {
+        for(int i = 1; i <= arr.length; i++) {
+            for (int j = 0; j < arr.length - i; j++) {
+                if (arr[j] > arr[j + 1])
+                    swap(arr, j, j + 1);
+            }
+        }
+        return arr;
     }
 
-    public static int[] selectionSort(int[] arr) {
-        return null;
+    static int[] selectionSort(int[] arr) {
+        int current_min = 0;
+
+        for(int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                if (arr[j] < arr[current_min])
+                    current_min = j;
+            }
+            swap(arr, i, current_min);
+        }
+
+        return arr;
     }
 
-    public static int[] insertionSort(int[] arr) {
-        return null;
+    static int[] insertionSort(int[] arr) {
+        return arr;
     }
 
-    public static int[] mergeSort(int[] arr) {
-        return null;
+    static int[] mergeSort(int[] arr) {
+        return arr;
     }
 
-    public static int[] quickSort(int[] arr) {
-        return null;
+    static int[] quickSort(int[] arr) {
+        return arr;
     }
 
-    public static int[] countSort(int[] arr) {
-        return null;
+    static int[] countSort(int[] arr) {
+        return arr;
     }
 
-    public static int[] bucketSort(int[] arr) {
-        return null;
+    static int[] bucketSort(int[] arr) {
+        return arr;
     }
 
-    public static int[] radixSort(int[] arr) {
-        return null;
+    static int[] radixSort(int[] arr) {
+        return arr;
     }
 
-    public static int[] getIntArray(int length) {
+    static int[] getIntArray(int length) {
         int[] arr = new int[length];
 
         for(int i = 0; i < length; i++) {
@@ -55,6 +71,14 @@ public class Arrays {
         }
 
         return true;
+    }
+
+    private static void swap(int[] arr, int p1, int p2) {
+        if(p1 == p2) return;
+
+        int aux = arr[p1];
+        arr[p1] = arr[p2];
+        arr[p2] = aux;
     }
 
     private static int getRandom(int min, int max) {
