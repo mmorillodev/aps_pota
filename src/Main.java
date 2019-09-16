@@ -437,81 +437,81 @@ public class Main {
             aux = new int[10000];
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = System.nanoTime();
+            initial = System.currentTimeMillis();
             Arrays.bubbleSort(aux);
-            end = System.nanoTime();
+            end = System.currentTimeMillis();
 
-            factory.addRecord(test_id, 10000, "bubble_sort", end-initial + "nS");
+            factory.addRecord(test_id, 10000, "bubble_sort", end-initial + "mS");
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = System.nanoTime();
+            initial = System.currentTimeMillis();
             Arrays.selectionSort(aux);
-            end = System.nanoTime();
+            end = System.currentTimeMillis();
 
-            factory.addRecord(test_id, 10000, "selection_sort", end-initial + "nS");
+            factory.addRecord(test_id, 10000, "selection_sort", end-initial + "mS");
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = System.nanoTime();
+            initial = System.currentTimeMillis();
             Arrays.insertionSort(aux);
-            end = System.nanoTime();
+            end = System.currentTimeMillis();
 
-            factory.addRecord(test_id, 10000, "insertion_sort", end-initial + "nS");
+            factory.addRecord(test_id, 10000, "insertion_sort", end-initial + "mS");
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = System.nanoTime();
+            initial = System.currentTimeMillis();
             Arrays.mergeSort(aux);
-            end = System.nanoTime();
+            end = System.currentTimeMillis();
 
-            factory.addRecord(test_id, 10000, "merge_sort", end-initial + "nS");
+            factory.addRecord(test_id, 10000, "merge_sort", end-initial + "mS");
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = System.nanoTime();
+            initial = System.currentTimeMillis();
             Arrays.quickSort(aux);
-            end = System.nanoTime();
+            end = System.currentTimeMillis();
 
-            factory.addRecord(test_id, 10000, "quick_sort", end-initial + "nS");
+            factory.addRecord(test_id, 10000, "quick_sort", end-initial + "mS");
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = System.nanoTime();
+            initial = System.currentTimeMillis();
             Arrays.countSort(aux);
-            end = System.nanoTime();
+            end = System.currentTimeMillis();
 
-            factory.addRecord(test_id, 10000, "count_sort", end-initial + "nS");
+            factory.addRecord(test_id, 10000, "count_sort", end-initial + "mS");
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = System.nanoTime();
+            initial = System.currentTimeMillis();
             Arrays.bucketSort(aux);
-            end = System.nanoTime();
+            end = System.currentTimeMillis();
 
-            factory.addRecord(test_id, 10000, "bucket_sort", end-initial + "nS");
+            factory.addRecord(test_id, 10000, "bucket_sort", end-initial + "mS");
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = System.nanoTime();
+            initial = System.currentTimeMillis();
             Arrays.radixSort(aux);
-            end = System.nanoTime();
+            end = System.currentTimeMillis();
 
-            factory.addRecord(test_id, 10000, "radix_sort", end-initial + "nS");
+            factory.addRecord(test_id, 10000, "radix_sort", end-initial + "mS");
         }
     }
 }
