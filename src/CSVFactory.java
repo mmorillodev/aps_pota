@@ -113,6 +113,25 @@ public class CSVFactory {
         }
     }
 
+    /* Crates a new file and copy the header */
+    public void newFile(String path) {
+        close();
+
+        this.path = path;
+
+        this.file = new File(buildCSVName());
+
+        try {
+            if (this.file.createNewFile()) {
+                this.writer = new PrintWriter(this.file);
+                this.currentLine = 0;
+                writeInFile(this.headers, false);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /* Returns the file size in Bytes */
     public long getFileSize() {
         return this.file.length();

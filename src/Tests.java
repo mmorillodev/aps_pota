@@ -1,14 +1,24 @@
 public class Tests {
     public static void main(String[] args) {
         int[] arr = {9, 5, 4, 1, 8, 3, 2, 7, 6};
-        int[] corArr = {1,2,3,4,5,6,7,8,9};
+        int[] arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8;
 
-//        System.out.println(java.util.Arrays.toString(arr));
-//        System.out.println(java.util.Arrays.toString(arr2));
-//
-//        System.out.println(java.util.Arrays.toString(Arrays.getIntArray(1000)));
-//        System.out.println(System.getProperty("user.dir"));
-        Arrays.insertionSort(arr);
-        System.out.println(java.util.Arrays.toString(arr));
+        Arrays.bubbleSort((arr1 = arr.clone()));
+        Arrays.selectionSort(arr2 = arr.clone());
+        Arrays.insertionSort(arr3 = arr.clone());
+        Arrays.mergeSort(arr4 = arr.clone());
+        Arrays.quickSort(arr5 = arr.clone());
+        Arrays.countSort(arr6 = arr.clone());
+        Arrays.bucketSort(arr7 = arr.clone());
+        Arrays.radixSort(arr8 = arr.clone());
+
+        System.out.println("bubble:\t\t"        + java.util.Arrays.toString(arr1));
+        System.out.println("selection:\t"       + java.util.Arrays.toString(arr2));
+        System.out.println("insertion:\t"       + java.util.Arrays.toString(arr3));
+        System.out.println("merge:\t\t"         + java.util.Arrays.toString(arr4));
+        System.out.println("quick:\t\t"         + java.util.Arrays.toString(arr5));
+        System.out.println("count:\t\t"         + java.util.Arrays.toString(arr6));
+        System.out.println("bucket:\t\t"        + java.util.Arrays.toString(arr7));
+        System.out.println("radix:\t\t"         + java.util.Arrays.toString(arr8));
     }
 }

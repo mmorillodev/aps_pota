@@ -28,8 +28,8 @@ public class Arrays {
     static int[] insertionSort(int[] arr) {
         for(int i = 1; i < arr.length; i++) {
             for(int j = i - 1; j >= 0; j--) {
-                if(arr[j] > arr[i]) {
-                    swap(arr, j, i);
+                if(arr[i] < arr[j]) {
+                    swap(arr, i, j);
                 }
             }
         }
@@ -67,7 +67,7 @@ public class Arrays {
         return arr;
     }
 
-    public static boolean areEquals(int[] arr1, int[] arr2) {
+    static boolean areEquals(int[] arr1, int[] arr2) {
         if(arr1 == arr2)
             return true;
 
