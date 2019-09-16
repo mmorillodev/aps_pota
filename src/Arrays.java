@@ -42,6 +42,21 @@ public class Arrays {
         return arr;
     }
 
+    public static boolean areEquals(int[] arr1, int[] arr2) {
+        if(arr1 == arr2)
+            return true;
+
+        if(arr1.length != arr2.length)
+            return false;
+
+        for(int i = 0; i < arr1.length; i++) {
+            if(arr1[i] != arr2[i])
+                return false;
+        }
+
+        return true;
+    }
+
     private static int getRandom(int min, int max) {
         return (int) (Math.random()*(max - min)) + min;
     }
