@@ -1,38 +1,38 @@
 public class Arrays {
 
-    public int[] bubbleSort(int[] arr) {
+    public static int[] bubbleSort(int[] arr) {
         return null;
     }
 
-    public int[] selectionSort(int[] arr) {
+    public static int[] selectionSort(int[] arr) {
         return null;
     }
 
-    public int[] insertionSort(int[] arr) {
+    public static int[] insertionSort(int[] arr) {
         return null;
     }
 
-    public int[] mergeSort(int[] arr) {
+    public static int[] mergeSort(int[] arr) {
         return null;
     }
 
-    public int[] quickSort(int[] arr) {
+    public static int[] quickSort(int[] arr) {
         return null;
     }
 
-    public int[] countSort(int[] arr) {
+    public static int[] countSort(int[] arr) {
         return null;
     }
 
-    public int[] bucketSort(int[] arr) {
+    public static int[] bucketSort(int[] arr) {
         return null;
     }
 
-    public int[] radixSort(int[] arr) {
+    public static int[] radixSort(int[] arr) {
         return null;
     }
 
-    public int[] getIntArray(int length) {
+    public static int[] getIntArray(int length) {
         int[] arr = new int[length];
 
         for(int i = 0; i < length; i++) {
@@ -42,7 +42,7 @@ public class Arrays {
         return arr;
     }
 
-    private int getRandom(int min, int max) {
+    private static int getRandom(int min, int max) {
         return (int) (Math.random()*(max - min)) + min;
     }
 }
