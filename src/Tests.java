@@ -5,9 +5,10 @@ public class Tests {
 
         arr[0] = 100;
 
-        System.out.println(java.util.Arrays.toString(arr));
-        System.out.println(java.util.Arrays.toString(arr2));
-
-        System.out.println(java.util.Arrays.toString(Arrays.getIntArray(1000)));
+//        System.out.println(java.util.Arrays.toString(arr));
+//        System.out.println(java.util.Arrays.toString(arr2));
+//
+//        System.out.println(java.util.Arrays.toString(Arrays.getIntArray(1000)));
+        System.out.println(System.getProperty("user.dir"));
     }
 }
