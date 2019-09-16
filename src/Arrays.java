@@ -11,9 +11,10 @@ public class Arrays {
     }
 
     static int[] selectionSort(int[] arr) {
-        int current_min = 0;
+        int current_min;
 
         for(int i = 0; i < arr.length; i++) {
+            current_min = i;
             for (int j = i; j < arr.length; j++) {
                 if (arr[j] < arr[current_min])
                     current_min = j;
@@ -25,6 +26,14 @@ public class Arrays {
     }
 
     static int[] insertionSort(int[] arr) {
+        for(int i = 1; i < arr.length; i++) {
+            for(int j = i - 1; j >= 0; j--) {
+                if(arr[j] > arr[i]) {
+                    swap(arr, j, i);
+                }
+            }
+        }
+
         return arr;
     }
 

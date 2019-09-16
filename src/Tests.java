@@ -8,7 +8,7 @@ public class Tests {
 //
 //        System.out.println(java.util.Arrays.toString(Arrays.getIntArray(1000)));
 //        System.out.println(System.getProperty("user.dir"));
-        Arrays.selectionSort(arr);
+        Arrays.insertionSort(arr);
         System.out.println(java.util.Arrays.toString(arr));
     }
 }
