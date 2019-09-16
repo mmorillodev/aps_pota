@@ -27,6 +27,20 @@ public class CSVFactory {
         }
     }
 
+    public CSVFactory() {
+        this.path 			= System.getProperty("user.dir");
+        this.file 			= new File(buildCSVName());
+        this.counter 		= 0;
+        this.currentLine 	= 0;
+
+        try {
+            this.file.createNewFile();
+            this.writer = new PrintWriter(this.file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /* Overload the constructor calling the other constructor *
      * 		     And writing the provided headers             */
     public CSVFactory(String directory, String... headers) {
@@ -146,7 +160,7 @@ public class CSVFactory {
         if(this.path.contains(".csv"))
             return this.path;
 
-        return this.path + "\\csv" + Calendar.getInstance().getTimeInMillis() + "_" + (this.counter++) + ".csv";
+        return this.path + (this.path.endsWith("\\") || this.path.endsWith("/") ? "" : "\\") + "csv" + Calendar.getInstance().getTimeInMillis() + "_" + (this.counter++) + ".csv";
     }
 
     private String addSlashes(String str) {

@@ -2,7 +2,7 @@ public class Main {
 
     @SuppressWarnings("all")
     public static void main(String[] args) {
-        var factory = new CSVFactory(System.getProperty("user.dir") + "/reports");
+        var factory = new CSVFactory(System.getProperty("user.dir") + "\\reports\\timePerSort.csv");
         factory.setHeaders("test_id", "array_size", "sort_method", "timestamp");
 
         int[] aux, arr;
