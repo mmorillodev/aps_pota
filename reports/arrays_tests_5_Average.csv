@@ -1,0 +1,10 @@
+test_id,array_size,sort_method,timestamp
+1,5,bubble_sort,-2250.42
+1,5,selection_sort,-2575.02
+1,5,insertion_sort,0.0
+1,5,heap_sort,-445.6
+1,5,merge_sort,-422.86
+1,5,quick_sort,-422.82
+1,5,count_sort,-505.86
+1,5,bucket_sort,-460.6
+1,5,radix_sort,-11622.04
