@@ -16,7 +16,7 @@ public class Tests {
         System.out.println("bubble:\t\t"        + java.util.Arrays.toString(arr1));
         System.out.println("selection:\t"       + java.util.Arrays.toString(arr2));
         System.out.println("insertion:\t"       + java.util.Arrays.toString(arr3));
-        System.out.println("heap:\t\t\t"        + java.util.Arrays.toString(arr9));
+        System.out.println("heap:\t\t"          + java.util.Arrays.toString(arr9));
         System.out.println("merge:\t\t"         + java.util.Arrays.toString(arr4));
         System.out.println("quick:\t\t"         + java.util.Arrays.toString(arr5));
         System.out.println("count:\t\t"         + java.util.Arrays.toString(arr6));

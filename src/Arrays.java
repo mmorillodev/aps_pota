@@ -27,6 +27,7 @@ public class Arrays {
             for(int j = i - 1; j >= 0; j--) {
                 if(arr[i] < arr[j]) {
                     swap(arr, i, j);
+                    i--;
                 }
             }
         }
