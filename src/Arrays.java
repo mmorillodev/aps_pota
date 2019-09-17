@@ -1,16 +1,15 @@
 public class Arrays {
 
-    static int[] bubbleSort(int[] arr) {
+    static void bubbleSort(int[] arr) {
         for(int i = 1; i <= arr.length; i++) {
             for (int j = 0; j < arr.length - i; j++) {
                 if (arr[j] > arr[j + 1])
                     swap(arr, j, j + 1);
             }
         }
-        return arr;
     }
 
-    static int[] selectionSort(int[] arr) {
+    static void selectionSort(int[] arr) {
         int current_min;
 
         for(int i = 0; i < arr.length; i++) {
@@ -21,11 +20,9 @@ public class Arrays {
             }
             swap(arr, i, current_min);
         }
-
-        return arr;
     }
 
-    static int[] insertionSort(int[] arr) {
+    static void insertionSort(int[] arr) {
         for(int i = 1; i < arr.length; i++) {
             for(int j = i - 1; j >= 0; j--) {
                 if(arr[i] < arr[j]) {
@@ -33,28 +30,30 @@ public class Arrays {
                 }
             }
         }
-
-        return arr;
     }
 
-    static int[] mergeSort(int[] arr) {
-        return arr;
+    static void heapSort(int[] arr) {
+
     }
 
-    static int[] quickSort(int[] arr) {
-        return arr;
+    static void mergeSort(int[] arr) {
+
     }
 
-    static int[] countSort(int[] arr) {
-        return arr;
+    static void quickSort(int[] arr) {
+
     }
 
-    static int[] bucketSort(int[] arr) {
-        return arr;
+    static void countSort(int[] arr) {
+
     }
 
-    static int[] radixSort(int[] arr) {
-        return arr;
+    static void bucketSort(int[] arr) {
+
+    }
+
+    static void radixSort(int[] arr) {
+
     }
 
     static int[] getIntArray(int length) {

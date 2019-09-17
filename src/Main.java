@@ -45,6 +45,16 @@ public class Main {
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
             initial = System.nanoTime();
+            Arrays.heapSort(aux);
+            end = System.nanoTime();
+
+            factory.addRecord(test_id, 5, "heap_sort", end-initial + " ns");
+
+            //-------------------------------------------------------------
+
+            System.arraycopy(arr, 0, aux, 0, arr.length);
+
+            initial = System.nanoTime();
             Arrays.mergeSort(aux);
             end = System.nanoTime();
 
@@ -125,6 +135,16 @@ public class Main {
             end = System.nanoTime();
 
             factory.addRecord(test_id, 10, "insertion_sort", end-initial + " ns");
+
+            //-------------------------------------------------------------
+
+            System.arraycopy(arr, 0, aux, 0, arr.length);
+
+            initial = System.nanoTime();
+            Arrays.heapSort(aux);
+            end = System.nanoTime();
+
+            factory.addRecord(test_id, 10, "heap_sort", end-initial + " ns");
 
             //-------------------------------------------------------------
 
@@ -217,6 +237,16 @@ public class Main {
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
             initial = System.nanoTime();
+            Arrays.heapSort(aux);
+            end = System.nanoTime();
+
+            factory.addRecord(test_id, 50, "heap_sort", end-initial + " ns");
+
+            //-------------------------------------------------------------
+
+            System.arraycopy(arr, 0, aux, 0, arr.length);
+
+            initial = System.nanoTime();
             Arrays.mergeSort(aux);
             end = System.nanoTime();
 
@@ -297,6 +327,16 @@ public class Main {
             end = System.nanoTime();
 
             factory.addRecord(test_id, 100, "insertion_sort", end-initial + " ns");
+
+            //-------------------------------------------------------------
+
+            System.arraycopy(arr, 0, aux, 0, arr.length);
+
+            initial = System.nanoTime();
+            Arrays.heapSort(aux);
+            end = System.nanoTime();
+
+            factory.addRecord(test_id, 100, "heap_sort", end-initial + " ns");
 
             //-------------------------------------------------------------
 
@@ -389,6 +429,16 @@ public class Main {
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
             initial = System.nanoTime();
+            Arrays.heapSort(aux);
+            end = System.nanoTime();
+
+            factory.addRecord(test_id, 1000, "heap_sort", end-initial + " ns");
+
+            //-------------------------------------------------------------
+
+            System.arraycopy(arr, 0, aux, 0, arr.length);
+
+            initial = System.nanoTime();
             Arrays.mergeSort(aux);
             end = System.nanoTime();
 
@@ -469,6 +519,16 @@ public class Main {
             end = System.currentTimeMillis();
 
             factory.addRecord(test_id, 10000, "insertion_sort", end-initial + " ms");
+
+            //-------------------------------------------------------------
+
+            System.arraycopy(arr, 0, aux, 0, arr.length);
+
+            initial = System.currentTimeMillis();
+            Arrays.heapSort(aux);
+            end = System.currentTimeMillis();
+
+            factory.addRecord(test_id, 10000, "heap_sort", end-initial + " ms");
 
             //-------------------------------------------------------------
 
