@@ -33,11 +33,11 @@ public class Arrays {
         }
     }
 
-    static void heapSort(int[] arr) {
+    static void mergeSort(int[] arr) {
 
     }
 
-    static void mergeSort(int[] arr) {
+    static void heapSort(int[] arr) {
 
     }
 
