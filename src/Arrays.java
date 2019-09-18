@@ -13,8 +13,7 @@ public class Arrays {
         int current_min;
 
         for(int i = 0; i < arr.length; i++) {
-            current_min = i;
-            for (int j = i; j < arr.length; j++) {
+            for (int j = current_min = i; j < arr.length; j++) {
                 if (arr[j] < arr[current_min])
                     current_min = j;
             }
@@ -24,11 +23,9 @@ public class Arrays {
 
     static void insertionSort(int[] arr) {
         for(int i = 1; i < arr.length; i++) {
-            for(int j = i - 1; j >= 0; j--) {
-                if(arr[i] < arr[j]) {
-                    swap(arr, i, j);
-                    i--;
-                }
+            for(int j = i - 1; j >= 0 && arr[i] < arr[j]; j--) {
+                swap(arr, i, j);
+                i--;
             }
         }
     }
