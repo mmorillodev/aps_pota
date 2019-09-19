@@ -57,6 +57,7 @@ public class Main {
             stopWatch.start();
             Arrays.bubbleSort(aux);
             stopWatch.stop();
+
             avgBubble += stopWatch.getResultant(milliseconds);
 
             factory.addRecord(test_id, length, "bubble_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));

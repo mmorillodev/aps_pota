@@ -9,7 +9,11 @@ class StopWatch {
     }
 
     void stop() {
-        resultant_time = System.nanoTime() - initial;
+        resultant_time += System.nanoTime() - initial;
+    }
+
+    void resume() {
+        initial = System.nanoTime();
     }
 
     double getResultant(boolean milli) {
