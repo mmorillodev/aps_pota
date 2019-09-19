@@ -163,6 +163,8 @@ public class Main {
 
         //Write the average values to new File
         factory.newFile(System.getProperty("user.dir") + "\\reports\\arrays_tests_" + length + "_Average.csv");
+
+        //Write records
         factory.addRecord(1, length, "bubble_sort",      avgBubble/TESTS_QTD       + (length < 10000 ? " ns" : " ms"));
         factory.addRecord(1, length, "selection_sort",   avgSelection/TESTS_QTD    + (length < 10000 ? " ns" : " ms"));
         factory.addRecord(1, length, "insertion_sort",   avgInsertion/TESTS_QTD    + (length < 10000 ? " ns" : " ms"));
