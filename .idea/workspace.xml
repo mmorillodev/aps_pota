@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="19a0aa37-9e4c-4d5e-b9ea-84c46f25f567" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/arraysTest100.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/arraysTest1000.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/arraysTest10000.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/arraysTest5.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/arraysTest50.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/arrays_tests_10000_Average.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/arrays_tests_1000_Average.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/arrays_tests_100_Average.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/arrays_tests_50_Average.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/arrays_tests_5_Average.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
