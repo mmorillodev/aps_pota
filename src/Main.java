@@ -16,15 +16,19 @@ public class Main {
 
         //TEST ARRAY SIZE 5
         testSortMethods(5);
+
         //TEST ARRAY SIZE 50
         factory.newFile(System.getProperty("user.dir") + "\\reports\\arraysTest50.csv");
         testSortMethods(50);
+
         //TEST ARRAY SIZE 100
         factory.newFile(System.getProperty("user.dir") + "\\reports\\arraysTest100.csv");
         testSortMethods(100);
+
         //TEST ARRAY SIZE 1000
         factory.newFile(System.getProperty("user.dir") + "\\reports\\arraysTest1000.csv");
         testSortMethods(1000);
+
         //TEST ARRAY SIZE 10000
         factory.newFile(System.getProperty("user.dir") + "\\reports\\arraysTest10000.csv");
         testSortMethods(10000);
