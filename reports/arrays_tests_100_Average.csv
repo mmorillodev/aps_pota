@@ -1,10 +1,10 @@
 test_id,array_size,sort_method,timestamp
-1,100,bubble_sort,66046.3 ns
-1,100,selection_sort,50595.78 ns
-1,100,insertion_sort,59113.98 ns
-1,100,heap_sort,354.9 ns
-1,100,merge_sort,-317.14 ns
-1,100,quick_sort,264.34 ns
-1,100,count_sort,151.08 ns
-1,100,bucket_sort,158.58 ns
-1,100,radix_sort,226.6 ns
+1,100,bubble_sort,60261.86 ns
+1,100,selection_sort,41775.52 ns
+1,100,insertion_sort,39562.9 ns
+1,100,heap_sort,385.14 ns
+1,100,merge_sort,-37667.46 ns
+1,100,quick_sort,317.14 ns
+1,100,count_sort,279.42 ns
+1,100,bucket_sort,219.04 ns
+1,100,radix_sort,226.56 ns

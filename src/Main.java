@@ -34,7 +34,9 @@ public class Main {
 
     private static void testSortMethods(int length) {
         int[] aux, arr;
-        double initial, totalTime;
+        boolean milliseconds = length >= 10000;
+
+        StopWatch stopWatch = new StopWatch();
 
         double  avgBubble       = 0.0,
                 avgSelection    = 0.0,
@@ -52,91 +54,108 @@ public class Main {
             aux = new int[length];
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 10000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.bubbleSort(aux);
-            avgBubble += totalTime = (length < 10000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
+            stopWatch.stop();
+            avgBubble += stopWatch.getResultant(milliseconds);
 
-            factory.addRecord(test_id, length, "bubble_sort", totalTime + (length < 10000 ? " ns" : " ms"));
+            factory.addRecord(test_id, length, "bubble_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 10000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.selectionSort(aux);
-            avgSelection += totalTime = (length < 10000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "selection_sort", totalTime + (length < 10000 ? " ns" : " ms"));
+            avgSelection += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "selection_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 10000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.insertionSort(aux);
-            avgInsertion += totalTime = (length < 10000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "insertion_sort", totalTime + (length < 10000 ? " ns" : " ms"));
+            avgInsertion += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "insertion_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 10000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.heapSort(aux);
-            avgHeap += totalTime = (length < 10000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "heap_sort", totalTime + (length < 10000 ? " ns" : " ms"));
+            avgHeap += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "heap_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 10000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.mergeSort(aux);
-            avgMerge += totalTime = initial - (length < 10000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "merge_sort", totalTime + (length < 10000 ? " ns" : " ms"));
+            avgMerge += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "merge_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 10000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.quickSort(aux);
-            avgQuick += totalTime = (length < 10000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "quick_sort", totalTime + (length < 10000 ? " ns" : " ms"));
+            avgQuick += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "quick_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 10000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.countSort(aux);
-            avgCount += totalTime = (length < 10000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "count_sort", totalTime + (length < 10000 ? " ns" : " ms"));
+            avgCount += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "count_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 10000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.bucketSort(aux);
-            avgBucket += totalTime = (length < 10000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "bucket_sort", totalTime + (length < 10000 ? " ns" : " ms"));
+            avgBucket += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "bucket_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 10000 ? System.nanoTime() : System.currentTimeMillis());;
+            stopWatch.start();
             Arrays.radixSort(aux);
-            avgRadix += totalTime = (length < 10000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "radix_sort", totalTime + (length < 10000 ? " ns" : " ms"));
+            avgRadix += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "radix_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
         }
 
         factory.flush();

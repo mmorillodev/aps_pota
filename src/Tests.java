@@ -1,5 +1,6 @@
 public class Tests {
     public static void main(String[] args) {
+        StopWatch stopWatch = new StopWatch();
 //        int[] arr = {9, 5, 4, 1, 8, 3, 2, 7, 6};
 //        int[] arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9;
 //
@@ -23,7 +24,10 @@ public class Tests {
 //        System.out.println("bucket:\t\t"        + java.util.Arrays.toString(arr7));
 //        System.out.println("radix:\t\t"         + java.util.Arrays.toString(arr8));
         int[] bigArr = Arrays.getIntArray(10000);
-        Arrays.insertionSort(bigArr);
+        stopWatch.start();
+        Arrays.bubbleSort(bigArr);
+        stopWatch.stop7();
         System.out.println(java.util.Arrays.toString(bigArr));
+        System.out.println("Execution time: " + stopWatch.getResultant(true));
     }
 }

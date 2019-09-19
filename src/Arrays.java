@@ -1,4 +1,4 @@
-public class Arrays {
+class Arrays {
 
     static void bubbleSort(int[] arr) {
         for(int i = 1; i <= arr.length; i++) {

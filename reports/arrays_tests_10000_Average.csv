@@ -1,7 +1,7 @@
 test_id,array_size,sort_method,timestamp
-1,10000,bubble_sort,132.86 ms
-1,10000,selection_sort,41.82 ms
-1,10000,insertion_sort,48.76 ms
+1,10000,bubble_sort,262.58 ms
+1,10000,selection_sort,38.78 ms
+1,10000,insertion_sort,49.96 ms
 1,10000,heap_sort,0.0 ms
 1,10000,merge_sort,0.0 ms
 1,10000,quick_sort,0.0 ms
