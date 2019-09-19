@@ -1,11 +1,14 @@
 public class Main {
 
-    static final CSVFactory factory;
+    private static final CSVFactory factory;
+    private static final int TESTS_QTD;
 
     static {
         factory = new CSVFactory(System.getProperty("user.dir") + "\\reports\\arraysTest5.csv");
         factory.setHeaders("test_id", "array_size", "sort_method", "timestamp");
         factory.printTrace(false);
+
+        TESTS_QTD = 50;
     }
 
     public static void main(String[] args) {
@@ -29,9 +32,11 @@ public class Main {
         factory.close();
     }
 
-    static void testSortMethods(int length) {
+    private static void testSortMethods(int length) {
         int[] aux, arr;
-        double initial, totalTime;
+        boolean milliseconds = length >= 10000;
+
+        StopWatch stopWatch = new StopWatch();
 
         double  avgBubble       = 0.0,
                 avgSelection    = 0.0,
@@ -43,111 +48,131 @@ public class Main {
                 avgBucket       = 0.0,
                 avgRadix        = 0.0;
 
-        for(int i = 0, test_id = 0; i < 50; i++, test_id++) {
+        for(int i = 0, test_id = 0; i < TESTS_QTD; i++, test_id++) {
             arr = Arrays.getIntArray(length);
 
             aux = new int[length];
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.bubbleSort(aux);
-            avgBubble += totalTime = initial - (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "bubble_sort", totalTime + (length < 1000 ? " ns" : " ms"));
+            avgBubble += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "bubble_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.selectionSort(aux);
-            avgSelection += totalTime = initial - (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "selection_sort", totalTime + (length < 1000 ? " ns" : " ms"));
+            avgSelection += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "selection_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.insertionSort(aux);
-            avgInsertion += totalTime = initial -  (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "insertion_sort", totalTime + (length < 1000 ? " ns" : " ms"));
+            avgInsertion += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "insertion_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.heapSort(aux);
-            avgHeap += totalTime = initial - (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "heap_sort", totalTime + (length < 1000 ? " ns" : " ms"));
+            avgHeap += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "heap_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.mergeSort(aux);
-            avgMerge += totalTime = initial - (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "merge_sort", totalTime + (length < 1000 ? " ns" : " ms"));
+            avgMerge += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "merge_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.quickSort(aux);
-            avgQuick += totalTime = initial - (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "quick_sort", totalTime + (length < 1000 ? " ns" : " ms"));
+            avgQuick += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "quick_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.countSort(aux);
-            avgCount += totalTime = initial -  (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "count_sort", totalTime + (length < 1000 ? " ns" : " ms"));
+            avgCount += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "count_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.start();
             Arrays.bucketSort(aux);
-            avgBucket += totalTime = initial - (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "bucket_sort", totalTime + (length < 1000 ? " ns" : " ms"));
+            avgBucket += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "bucket_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
 
             //-------------------------------------------------------------
 
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            initial = System.nanoTime();
+            stopWatch.start();
             Arrays.radixSort(aux);
-            avgRadix += totalTime = initial - System.nanoTime();
+            stopWatch.stop();
 
-            factory.addRecord(test_id, length, "radix_sort", totalTime + (length < 1000 ? " ns" : " ms"));
+            avgRadix += stopWatch.getResultant(milliseconds);
+
+            factory.addRecord(test_id, length, "radix_sort", stopWatch.getResultant(milliseconds) + (milliseconds ? " ns" : " ms"));
         }
 
         factory.flush();
 
         //Write the average values to new File
         factory.newFile(System.getProperty("user.dir") + "\\reports\\arrays_tests_" + length + "_Average.csv");
-        factory.addRecord(1, length, "bubble_sort",      avgBubble/50);
-        factory.addRecord(1, length, "selection_sort",   avgSelection/50);
-        factory.addRecord(1, length, "insertion_sort",   avgInsertion/50);
-        factory.addRecord(1, length, "heap_sort",        avgHeap/50);
-        factory.addRecord(1, length, "merge_sort",       avgMerge/50);
-        factory.addRecord(1, length, "quick_sort",       avgQuick/50);
-        factory.addRecord(1, length, "count_sort",       avgCount/50);
-        factory.addRecord(1, length, "bucket_sort",      avgBucket/50);
-        factory.addRecord(1, length, "radix_sort",       avgRadix/50);
+
+        //Write records
+        factory.addRecord(1, length, "bubble_sort",      avgBubble/TESTS_QTD       + (length < 10000 ? " ns" : " ms"));
+        factory.addRecord(1, length, "selection_sort",   avgSelection/TESTS_QTD    + (length < 10000 ? " ns" : " ms"));
+        factory.addRecord(1, length, "insertion_sort",   avgInsertion/TESTS_QTD    + (length < 10000 ? " ns" : " ms"));
+        factory.addRecord(1, length, "heap_sort",        avgHeap/TESTS_QTD         + (length < 10000 ? " ns" : " ms"));
+        factory.addRecord(1, length, "merge_sort",       avgMerge/TESTS_QTD        + (length < 10000 ? " ns" : " ms"));
+        factory.addRecord(1, length, "quick_sort",       avgQuick/TESTS_QTD        + (length < 10000 ? " ns" : " ms"));
+        factory.addRecord(1, length, "count_sort",       avgCount/TESTS_QTD        + (length < 10000 ? " ns" : " ms"));
+        factory.addRecord(1, length, "bucket_sort",      avgBucket/TESTS_QTD       + (length < 10000 ? " ns" : " ms"));
+        factory.addRecord(1, length, "radix_sort",       avgRadix/TESTS_QTD        + (length < 10000 ? " ns" : " ms"));
     }
 }
