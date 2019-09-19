@@ -8,8 +8,8 @@ class StopWatch {
         initial = System.nanoTime();
     }
 
-    double stop() {
-        return resultant_time = System.nanoTime() - initial;
+    void stop() {
+        resultant_time = System.nanoTime() - initial;
     }
 
     double getResultant(boolean milli) {
