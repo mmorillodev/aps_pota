@@ -51,7 +51,7 @@ public class Main {
 
             initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
             Arrays.bubbleSort(aux);
-            avgBubble += totalTime = initial - (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            avgBubble += totalTime = (length < 1000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
 
             factory.addRecord(test_id, length, "bubble_sort", totalTime + (length < 1000 ? " ns" : " ms"));
 
@@ -61,7 +61,7 @@ public class Main {
 
             initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
             Arrays.selectionSort(aux);
-            avgSelection += totalTime = initial - (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            avgSelection += totalTime = (length < 1000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
 
             factory.addRecord(test_id, length, "selection_sort", totalTime + (length < 1000 ? " ns" : " ms"));
 
@@ -71,7 +71,7 @@ public class Main {
 
             initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
             Arrays.insertionSort(aux);
-            avgInsertion += totalTime = initial -  (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            avgInsertion += totalTime = (length < 1000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
 
             factory.addRecord(test_id, length, "insertion_sort", totalTime + (length < 1000 ? " ns" : " ms"));
 
@@ -81,7 +81,7 @@ public class Main {
 
             initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
             Arrays.heapSort(aux);
-            avgHeap += totalTime = initial - (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            avgHeap += totalTime = (length < 1000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
 
             factory.addRecord(test_id, length, "heap_sort", totalTime + (length < 1000 ? " ns" : " ms"));
 
@@ -101,7 +101,7 @@ public class Main {
 
             initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
             Arrays.quickSort(aux);
-            avgQuick += totalTime = initial - (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            avgQuick += totalTime = (length < 1000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
 
             factory.addRecord(test_id, length, "quick_sort", totalTime + (length < 1000 ? " ns" : " ms"));
 
@@ -111,7 +111,7 @@ public class Main {
 
             initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
             Arrays.countSort(aux);
-            avgCount += totalTime = initial -  (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            avgCount += totalTime = (length < 1000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
 
             factory.addRecord(test_id, length, "count_sort", totalTime + (length < 1000 ? " ns" : " ms"));
 
@@ -121,7 +121,7 @@ public class Main {
 
             initial = (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
             Arrays.bucketSort(aux);
-            avgBucket += totalTime = initial - (length < 1000 ? System.nanoTime() : System.currentTimeMillis());
+            avgBucket += totalTime = (length < 1000 ? System.nanoTime() : System.currentTimeMillis()) - initial;
 
             factory.addRecord(test_id, length, "bucket_sort", totalTime + (length < 1000 ? " ns" : " ms"));
 

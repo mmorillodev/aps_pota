@@ -23,9 +23,8 @@ public class Arrays {
 
     static void insertionSort(int[] arr) {
         for(int i = 1; i < arr.length; i++) {
-            for(int j = i - 1, k = i; j >= 0 && arr[k] < arr[j]; j--) {
+            for(int j = i - 1, k = i; j >= 0 && arr[k] < arr[j]; j--, k--) {
                 swap(arr, k, j);
-                k--;
             }
         }
     }
