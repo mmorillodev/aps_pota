@@ -1,5 +1,5 @@
 public class Tests {
-    public static void main(String[] args) throws SortException {
+    public static void main(String[] args) {
 //        StopWatch stopWatch = new StopWatch();
         int[] arr = {9, 5, 4, 1, 8, 3, 2, 7, 6};
         int[] correntArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -58,19 +58,9 @@ public class Tests {
         System.out.println("count:\t\t"         + java.util.Arrays.toString(arr6));
         System.out.println("bucket:\t\t"        + java.util.Arrays.toString(arr7));
         System.out.println("radix:\t\t"         + java.util.Arrays.toString(arr8));
-//        int[] bigArr = Arrays.getIntArray(10000);
-//        stopWatch.start();
-//        Arrays.bubbleSort(bigArr);
-//        stopWatch.stop();
-//        System.out.println(java.util.Arrays.toString(bigArr));
-//        System.out.println("Execution time: " + stopWatch.getResultant(true));
     }
 
-    private static class SortException extends Exception {
-
-        public SortException() {
-            super();
-        }
+    private static class SortException extends RuntimeException {
 
         public SortException(String message) {
             super(message);
