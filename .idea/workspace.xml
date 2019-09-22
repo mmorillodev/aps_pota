@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19a0aa37-9e4c-4d5e-b9ea-84c46f25f567" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/arraysTest100.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/arraysTest1000.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/arraysTest10000.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/arraysTest5.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/arraysTest50.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/arrays_tests_10000_Average.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/arrays_tests_1000_Average.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/arrays_tests_100_Average.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/arrays_tests_50_Average.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/arrays_tests_5_Average.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,7 +56,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Tests">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="aps_pota" />
@@ -65,8 +73,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Tests" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Tests" />
       </list>
     </recent_temporary>
   </component>
