@@ -41,13 +41,8 @@ public class Tests {
             errorMsg += (errorMsg.length() > 0 ? ", " : "") + "Radix";
         }
         if(!Arrays.areEquals(arr9, correctArray)) {
-            errorMsg += (errorMsg.length() > 0 ? ", " : "") + "Heap";
+            errorMsg += (errorMsg.length() > 0 ? " and " : "") + "Heap";
         }
-
-        if(errorMsg.length() > 0) {
-            throw new SortException("Invalid sort methods: " + errorMsg);
-        }
-
 
         System.out.println("bubble:\t\t"        + java.util.Arrays.toString(arr1));
         System.out.println("selection:\t"       + java.util.Arrays.toString(arr2));
@@ -58,6 +53,10 @@ public class Tests {
         System.out.println("count:\t\t"         + java.util.Arrays.toString(arr6));
         System.out.println("bucket:\t\t"        + java.util.Arrays.toString(arr7));
         System.out.println("radix:\t\t"         + java.util.Arrays.toString(arr8));
+
+        if(errorMsg.length() > 0) {
+            throw new SortException("Invalid sort methods: " + errorMsg);
+        }
     }
 
     private static class SortException extends RuntimeException {
