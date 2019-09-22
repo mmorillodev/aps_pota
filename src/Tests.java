@@ -59,6 +59,9 @@
         if(errorMsg.length() > 0) {
             throw new SortException("Invalid sort methods: " + errorMsg);
         }
+        else {
+            System.out.println("Everything OK!");
+        }
     }
 
     private static class SortException extends RuntimeException {
