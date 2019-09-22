@@ -1,10 +1,12 @@
-public class Tests {
+ public class Tests {
     public static void main(String[] args) {
 //        StopWatch stopWatch = new StopWatch();
-        int[] arr = {9, 5, 4, 1, 8, 3, 2, 7, 6};
-        int[] correctArray = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[] arr = Arrays.getIntArray(10);
+        int[] correctArray = arr.clone();
         int[] arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9;
         String errorMsg = "";
+
+        java.util.Arrays.sort(correctArray);
 
         Arrays.bubbleSort((arr1 = arr.clone()));
         Arrays.selectionSort(arr2 = arr.clone());
@@ -60,8 +62,7 @@ public class Tests {
     }
 
     private static class SortException extends RuntimeException {
-
-        public SortException(String message) {
+        SortException(String message) {
             super(message);
         }
     }
