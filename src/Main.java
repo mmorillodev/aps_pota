@@ -169,14 +169,14 @@ public class Main {
         factory.newFile(System.getProperty("user.dir") + "\\reports\\arrays_tests_" + length + "_Average.csv");
 
         //Write records
-        factory.addRecord(1, length, "bubble_sort",      avgBubble/TESTS_QTD       + (length < 10000 ? " ns" : " ms"));
-        factory.addRecord(1, length, "selection_sort",   avgSelection/TESTS_QTD    + (length < 10000 ? " ns" : " ms"));
-        factory.addRecord(1, length, "insertion_sort",   avgInsertion/TESTS_QTD    + (length < 10000 ? " ns" : " ms"));
-        factory.addRecord(1, length, "heap_sort",        avgHeap/TESTS_QTD         + (length < 10000 ? " ns" : " ms"));
-        factory.addRecord(1, length, "merge_sort",       avgMerge/TESTS_QTD        + (length < 10000 ? " ns" : " ms"));
-        factory.addRecord(1, length, "quick_sort",       avgQuick/TESTS_QTD        + (length < 10000 ? " ns" : " ms"));
-        factory.addRecord(1, length, "count_sort",       avgCount/TESTS_QTD        + (length < 10000 ? " ns" : " ms"));
-        factory.addRecord(1, length, "bucket_sort",      avgBucket/TESTS_QTD       + (length < 10000 ? " ns" : " ms"));
-        factory.addRecord(1, length, "radix_sort",       avgRadix/TESTS_QTD        + (length < 10000 ? " ns" : " ms"));
+        factory.addRecord(1, length, "bubble_sort",      avgBubble/TESTS_QTD       + (milliseconds ? " ms" : " ns"));
+        factory.addRecord(1, length, "insertion_sort",   avgInsertion/TESTS_QTD    + (milliseconds ? " ms" : " ns"));
+        factory.addRecord(1, length, "selection_sort",   avgSelection/TESTS_QTD    + (milliseconds ? " ms" : " ns"));
+        factory.addRecord(1, length, "heap_sort",        avgHeap/TESTS_QTD         + (milliseconds ? " ms" : " ns"));
+        factory.addRecord(1, length, "merge_sort",       avgMerge/TESTS_QTD        + (milliseconds ? " ms" : " ns"));
+        factory.addRecord(1, length, "quick_sort",       avgQuick/TESTS_QTD        + (milliseconds ? " ms" : " ns"));
+        factory.addRecord(1, length, "count_sort",       avgCount/TESTS_QTD        + (milliseconds ? " ms" : " ns"));
+        factory.addRecord(1, length, "bucket_sort",      avgBucket/TESTS_QTD       + (milliseconds ? " ms" : " ns"));
+        factory.addRecord(1, length, "radix_sort",       avgRadix/TESTS_QTD        + (milliseconds ? " ms" : " ns"));
     }
 }
