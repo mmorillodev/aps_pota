@@ -1,5 +1,3 @@
-import com.sun.javafx.collections.MappingChange;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,10 +10,10 @@ public class TestManager {
         arr = Arrays.getIntArray(size);
         sortTypeToTimestamp = new HashMap<>();
 
-        initTest();
+        trigger();
     }
 
-    public void initTest() {
+    public void trigger() {
         StopWatch stopWatch = new StopWatch();
         int[] aux;
 
