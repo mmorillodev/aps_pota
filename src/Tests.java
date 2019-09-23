@@ -1,6 +1,8 @@
- public class Tests {
+import utils.Arrays;
+
+public class Tests {
     public static void main(String[] args) {
-//        StopWatch stopWatch = new StopWatch();
+//        utils.StopWatch stopWatch = new utils.StopWatch();
         int[] arr = Arrays.getIntArray(10);
         int[] correctArray = arr.clone();
         int[] arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9;

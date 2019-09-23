@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="19a0aa37-9e4c-4d5e-b9ea-84c46f25f567" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Arrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Arrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CSVFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/CSVFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SortType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/SortType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/StopWatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/TestManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

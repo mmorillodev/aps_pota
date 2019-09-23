@@ -1,3 +1,5 @@
+package utils;
+
 public enum SortType {
     SELECTION_SORT("Selection"),
     INSERTION_SORT("Insertion"),
