@@ -73,8 +73,8 @@ public class CSVFactory {
         StringBuffer builder = new StringBuffer();
 
         for(int i = 0; i < getHeaderLength(); i++) {
-            value = (i >= values.length ? "" : values[i]);
-            builder.append(addSlashes(value.toString())+ (i == getHeaderLength() - 1 ? "" : ","));
+            value = (i < values.length ? (values[i] != null ? values[i] : "null") : "");
+            builder.append(addSlashes(value.toString())).append(i == getHeaderLength() - 1 ? "" : ",");
         }
 
         writeInFile("\n", false);
