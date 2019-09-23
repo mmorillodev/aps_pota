@@ -1,6 +1,8 @@
-class Arrays {
+package utils;
 
-    static void bubbleSort(int[] arr) {
+public class Arrays {
+
+    public static void bubbleSort(int[] arr) {
         for(int i = 1; i <= arr.length; i++) {
             for (int j = 0; j < arr.length - i; j++) {
                 if (arr[j] > arr[j + 1])
@@ -9,7 +11,7 @@ class Arrays {
         }
     }
 
-    static void selectionSort(int[] arr) {
+    public static void selectionSort(int[] arr) {
         int current_min;
 
         for(int i = 0; i < arr.length; i++) {
@@ -21,7 +23,7 @@ class Arrays {
         }
     }
 
-    static void insertionSort(int[] arr) {
+    public static void insertionSort(int[] arr) {
         for(int i = 1; i < arr.length; i++) {
             for(int j = i - 1, k = i; j >= 0 && arr[k] < arr[j]; j--, k--) {
                 swap(arr, k, j);
@@ -29,31 +31,31 @@ class Arrays {
         }
     }
 
-    static void mergeSort(int[] arr) {
+    public static void mergeSort(int[] arr) {
 
     }
 
-    static void heapSort(int[] arr) {
+    public static void heapSort(int[] arr) {
 
     }
 
-    static void quickSort(int[] arr) {
+    public static void quickSort(int[] arr) {
 
     }
 
-    static void countSort(int[] arr) {
+    public static void countSort(int[] arr) {
 
     }
 
-    static void bucketSort(int[] arr) {
+    public static void bucketSort(int[] arr) {
 
     }
 
-    static void radixSort(int[] arr) {
+    public static void radixSort(int[] arr) {
 
     }
 
-    static int[] getIntArray(int length) {
+    public static int[] getIntArray(int length) {
         int[] arr = new int[length];
 
         for(int i = 0; i < length; i++) {
@@ -63,7 +65,7 @@ class Arrays {
         return arr;
     }
 
-    static boolean areEquals(int[] arr1, int[] arr2) {
+    public static boolean areEquals(int[] arr1, int[] arr2) {
         if(arr1 == arr2)
             return true;
 
