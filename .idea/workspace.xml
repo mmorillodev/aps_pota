@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19a0aa37-9e4c-4d5e-b9ea-84c46f25f567" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SortType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TestManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Tests$SortException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Tests$SortException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Tests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Tests">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="aps_pota" />
@@ -63,8 +69,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Tests" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Tests" />
       </list>
     </recent_temporary>
   </component>
