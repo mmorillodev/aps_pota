@@ -7,9 +7,11 @@ public class TestManager {
 
     private Map<SortType, Double> sortTypeToTimestamp;
     private int[] arr;
+    private int qtd;
 
-    public TestManager(int size) {
-        arr = Arrays.getIntArray(size);
+    public TestManager(int qtd, int arrSize) {
+        this.arr = Arrays.getIntArray(arrSize);
+        this.qtd = qtd;
         sortTypeToTimestamp = new HashMap<>();
 
         trigger();
@@ -29,7 +31,7 @@ public class TestManager {
                 avgBucket       = 0.0,
                 avgRadix        = 0.0;
 
-        for(int i = 0; i < 50; i++) {
+        for(int i = 0; i < qtd; i++) {
             aux = new int[arr.length];
             System.arraycopy(arr, 0, aux, 0, arr.length);
 
