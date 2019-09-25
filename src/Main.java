@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 public class Main {
 
@@ -42,20 +43,20 @@ public class Main {
             }
         }
 
-        for(List<TestManager> managers : sizeToManager.values()) {
-            factory.addRecord(
+        sizeToManager.values().forEach(managers ->
+                factory.addRecord(
                     managers.get(0).size(),
-                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.BUBBLE_SORT)).sum()/QTD_TESTS,
-                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.SELECTION_SORT)).sum()/QTD_TESTS,
-                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.INSERTION_SORT)).sum()/QTD_TESTS,
-                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.MERGE_SORT)).sum()/QTD_TESTS,
-                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.HEAP_SORT)).sum()/QTD_TESTS,
-                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.QUICK_SORT)).sum()/QTD_TESTS,
-                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.COUNT_SORT)).sum()/QTD_TESTS,
-                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.BUCKET_SORT)).sum()/QTD_TESTS,
-                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.RADIX_SORT)).sum()/QTD_TESTS
-            );
-        }
+                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.BUBBLE_SORT)).sum() / QTD_TESTS,
+                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.SELECTION_SORT)).sum() / QTD_TESTS,
+                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.INSERTION_SORT)).sum() / QTD_TESTS,
+                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.MERGE_SORT)).sum() / QTD_TESTS,
+                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.HEAP_SORT)).sum() / QTD_TESTS,
+                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.QUICK_SORT)).sum() / QTD_TESTS,
+                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.COUNT_SORT)).sum() / QTD_TESTS,
+                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.BUCKET_SORT)).sum() / QTD_TESTS,
+                    managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.RADIX_SORT)).sum() / QTD_TESTS
+                )
+        );
 
         factory.close();
     }
