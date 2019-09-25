@@ -7,130 +7,118 @@ public class TestManager {
 
     private Map<SortType, Double> sortTypeToTimestamp;
     private int[] arr;
-    private int qtd;
 
-    public TestManager(int qtd, int arrSize) {
+    public TestManager(int arrSize) {
         this.arr = Arrays.getIntArray(arrSize);
-        this.qtd = qtd;
         sortTypeToTimestamp = new HashMap<>();
 
         trigger();
     }
 
     public void trigger() {
-        StopWatch stopWatch = new StopWatch();
+        double avgBubble, avgSelection, avgInsertion, avgHeap, avgMerge, avgQuick,  avgCount, avgBucket, avgRadix;
         int[] aux;
 
-        double  avgBubble       = 0.0,
-                avgSelection    = 0.0,
-                avgInsertion    = 0.0,
-                avgHeap         = 0.0,
-                avgMerge        = 0.0,
-                avgQuick        = 0.0,
-                avgCount        = 0.0,
-                avgBucket       = 0.0,
-                avgRadix        = 0.0;
+        StopWatch stopWatch = new StopWatch();
 
-        for(int i = 0; i < qtd; i++) {
-            aux = new int[arr.length];
-            System.arraycopy(arr, 0, aux, 0, arr.length);
+        aux = new int[arr.length];
+        System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            stopWatch.start();
-            Arrays.bubbleSort(aux);
-            stopWatch.stop();
+        stopWatch.start();
+        Arrays.bubbleSort(aux);
+        stopWatch.stop();
 
-            avgBubble += stopWatch.getResultant(false);
+        avgBubble = stopWatch.getResultant(false);
 
-            //-------------------------------------------------------------
+        //-------------------------------------------------------------
 
-            System.arraycopy(arr, 0, aux, 0, arr.length);
+        System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            stopWatch.start();
-            Arrays.selectionSort(aux);
-            stopWatch.stop();
+        stopWatch.start();
+        Arrays.selectionSort(aux);
+        stopWatch.stop();
 
-            avgSelection += stopWatch.getResultant(false);
+        avgSelection = stopWatch.getResultant(false);
 
-            //-------------------------------------------------------------
+        //-------------------------------------------------------------
 
-            System.arraycopy(arr, 0, aux, 0, arr.length);
+        System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            stopWatch.start();
-            Arrays.insertionSort(aux);
-            stopWatch.stop();
+        stopWatch.start();
+        Arrays.insertionSort(aux);
+        stopWatch.stop();
 
-            avgInsertion += stopWatch.getResultant(false);
+        avgInsertion = stopWatch.getResultant(false);
 
-            //-------------------------------------------------------------
+        //-------------------------------------------------------------
 
-            System.arraycopy(arr, 0, aux, 0, arr.length);
+        System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            stopWatch.start();
-            Arrays.heapSort(aux);
-            stopWatch.stop();
+        stopWatch.start();
+        Arrays.heapSort(aux);
+        stopWatch.stop();
 
-            avgHeap += stopWatch.getResultant(false);
+        avgHeap = stopWatch.getResultant(false);
 
-            //-------------------------------------------------------------
+        //-------------------------------------------------------------
 
-            System.arraycopy(arr, 0, aux, 0, arr.length);
+        System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            stopWatch.start();
-            Arrays.mergeSort(aux);
-            stopWatch.stop();
+        stopWatch.start();
+        Arrays.mergeSort(aux);
+        stopWatch.stop();
 
-            avgMerge += stopWatch.getResultant(false);
+        avgMerge = stopWatch.getResultant(false);
 
-            //-------------------------------------------------------------
+        //-------------------------------------------------------------
 
-            System.arraycopy(arr, 0, aux, 0, arr.length);
+        System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            stopWatch.start();
-            Arrays.quickSort(aux);
-            stopWatch.stop();
+        stopWatch.start();
+        Arrays.quickSort(aux);
+        stopWatch.stop();
 
-            avgQuick += stopWatch.getResultant(false);
+        avgQuick = stopWatch.getResultant(false);
 
-            //-------------------------------------------------------------
+        //-------------------------------------------------------------
 
-            System.arraycopy(arr, 0, aux, 0, arr.length);
+        System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            stopWatch.start();
-            Arrays.countSort(aux);
-            stopWatch.stop();
+        stopWatch.start();
+        Arrays.countSort(aux);
+        stopWatch.stop();
 
-            avgCount += stopWatch.getResultant(false);
+        avgCount = stopWatch.getResultant(false);
 
-            //-------------------------------------------------------------
+        //-------------------------------------------------------------
 
-            System.arraycopy(arr, 0, aux, 0, arr.length);
+        System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            stopWatch.start();
-            Arrays.bucketSort(aux);
-            stopWatch.stop();
+        stopWatch.start();
+        Arrays.bucketSort(aux);
+        stopWatch.stop();
 
-            avgBucket += stopWatch.getResultant(false);
+        avgBucket = stopWatch.getResultant(false);
 
-            //-------------------------------------------------------------
+        //-------------------------------------------------------------
 
-            System.arraycopy(arr, 0, aux, 0, arr.length);
+        System.arraycopy(arr, 0, aux, 0, arr.length);
 
-            stopWatch.start();
-            Arrays.radixSort(aux);
-            stopWatch.stop();
+        stopWatch.start();
+        Arrays.radixSort(aux);
+        stopWatch.stop();
 
-            avgRadix += stopWatch.getResultant(false);
-        }
+        avgRadix = stopWatch.getResultant(false);
 
-        this.sortTypeToTimestamp.put(SortType.BUBBLE_SORT,      avgBubble/50);
-        this.sortTypeToTimestamp.put(SortType.SELECTION_SORT,   avgSelection/50);
-        this.sortTypeToTimestamp.put(SortType.INSERTION_SORT,   avgInsertion/50);
-        this.sortTypeToTimestamp.put(SortType.MERGE_SORT,       avgMerge/50);
-        this.sortTypeToTimestamp.put(SortType.QUICK_SORT,       avgQuick/50);
-        this.sortTypeToTimestamp.put(SortType.HEAP_SORT,        avgHeap/50);
-        this.sortTypeToTimestamp.put(SortType.BUCKET_SORT,      avgBucket/50);
-        this.sortTypeToTimestamp.put(SortType.RADIX_SORT,       avgRadix/50);
-        this.sortTypeToTimestamp.put(SortType.COUNT_SORT,       avgCount/50);
+        this.sortTypeToTimestamp.put(SortType.BUBBLE_SORT,      avgBubble);
+        this.sortTypeToTimestamp.put(SortType.SELECTION_SORT,   avgSelection);
+        this.sortTypeToTimestamp.put(SortType.INSERTION_SORT,   avgInsertion);
+        this.sortTypeToTimestamp.put(SortType.MERGE_SORT,       avgMerge);
+        this.sortTypeToTimestamp.put(SortType.QUICK_SORT,       avgQuick);
+        this.sortTypeToTimestamp.put(SortType.HEAP_SORT,        avgHeap);
+        this.sortTypeToTimestamp.put(SortType.BUCKET_SORT,      avgBucket);
+        this.sortTypeToTimestamp.put(SortType.RADIX_SORT,       avgRadix);
+        this.sortTypeToTimestamp.put(SortType.COUNT_SORT,       avgCount);
     }
 
     public Map<SortType, Double> getTimestampRatio() {
