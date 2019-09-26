@@ -1,5 +1,6 @@
 package utils;
 
+import static java.lang.System.arraycopy;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,7 +23,7 @@ public class TestManager {
         StopWatch stopWatch = new StopWatch();
 
         aux = new int[arr.length];
-        System.arraycopy(arr, 0, aux, 0, arr.length);
+        arraycopy(arr, 0, aux, 0, arr.length);
 
         stopWatch.start();
         Arrays.bubbleSort(aux);
@@ -32,7 +33,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        System.arraycopy(arr, 0, aux, 0, arr.length);
+        arraycopy(arr, 0, aux, 0, arr.length);
 
         stopWatch.start();
         Arrays.selectionSort(aux);
@@ -42,7 +43,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        System.arraycopy(arr, 0, aux, 0, arr.length);
+        arraycopy(arr, 0, aux, 0, arr.length);
 
         stopWatch.start();
         Arrays.insertionSort(aux);
@@ -52,7 +53,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        System.arraycopy(arr, 0, aux, 0, arr.length);
+        arraycopy(arr, 0, aux, 0, arr.length);
 
         stopWatch.start();
         Arrays.heapSort(aux);
@@ -62,7 +63,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        System.arraycopy(arr, 0, aux, 0, arr.length);
+        arraycopy(arr, 0, aux, 0, arr.length);
 
         stopWatch.start();
         Arrays.mergeSort(aux);
@@ -72,7 +73,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        System.arraycopy(arr, 0, aux, 0, arr.length);
+        arraycopy(arr, 0, aux, 0, arr.length);
 
         stopWatch.start();
         Arrays.quickSort(aux);
@@ -82,7 +83,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        System.arraycopy(arr, 0, aux, 0, arr.length);
+        arraycopy(arr, 0, aux, 0, arr.length);
 
         stopWatch.start();
         Arrays.countSort(aux);
@@ -92,7 +93,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        System.arraycopy(arr, 0, aux, 0, arr.length);
+        arraycopy(arr, 0, aux, 0, arr.length);
 
         stopWatch.start();
         Arrays.bucketSort(aux);
@@ -102,7 +103,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        System.arraycopy(arr, 0, aux, 0, arr.length);
+        arraycopy(arr, 0, aux, 0, arr.length);
 
         stopWatch.start();
         Arrays.radixSort(aux);
