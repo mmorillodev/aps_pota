@@ -62,6 +62,10 @@ public class Main {
                     (managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.RADIX_SORT)).sum()
                             / QTD_TESTS) / (managers.get(0).size() >= 10000 ? 1e3 : 1) + (managers.get(0).size() >= 1e3 ? " us" : " ns")
             );
+            managers.clear();
+            managers = null;
+            //Runs garbage collector
+            System.gc();
         });
         factory.close();
         
