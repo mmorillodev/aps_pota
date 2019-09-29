@@ -34,11 +34,10 @@ public class Main {
 
         for(int currentSize : sizesToTests) {
             currentTest = new TestManager(currentSize);
-            sizeToTotalTime.put(currentSize, new HashMap<>());
             for(int i = 0; i < QTD_TESTS; i++) {
                 currentTest.trigger();
-                Map<SortType, Double> finalTimestampRatio = currentTest.getTimestampRatio();
-                finalTimestampRatio.forEach((key, value) -> sizeToTotalTime.get(currentSize).merge(key, value, Double::sum));
+                sizeToTotalTime.put(currentSize, currentTest.getTimestampRatio());
+                currentTest.getTimestampRatio().forEach((key, value) -> sizeToTotalTime.get(currentSize).merge(key, value, Double::sum));
             }
         }
 
