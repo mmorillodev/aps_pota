@@ -129,4 +129,8 @@ public class TestManager {
     public int size() {
         return arr.length;
     }
+
+    public String toString() {
+        return sortTypeToTimestamp.toString();
+    }
 }

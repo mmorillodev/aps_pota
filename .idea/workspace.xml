@@ -5,8 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/SortType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/SortType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/TestManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/TestManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/TestManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/TestManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
