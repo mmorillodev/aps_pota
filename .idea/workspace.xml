@@ -2,7 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19a0aa37-9e4c-4d5e-b9ea-84c46f25f567" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/APS_POTA/Main$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/Arrays.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/CSVFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/SortType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/StopWatch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/TestManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Arrays.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/CSVFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/SortType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/StopWatch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/TestManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Tests$SortException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Tests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Arrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Arrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/SortType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/SortType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/TestManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/TestManager.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,8 +32,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -24,14 +44,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="1932" />
-    <option name="height" value="1066" />
-  </component>
   <component name="ProjectId" id="1R22fsn1JPJmW3Uig1uhpyIeF2p" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">

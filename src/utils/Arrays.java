@@ -81,8 +81,6 @@ public class Arrays {
     }
 
     private static void swap(int[] arr, int p1, int p2) {
-        if(p1 == p2) return;
-
         int aux = arr[p1];
         arr[p1] = arr[p2];
         arr[p2] = aux;
