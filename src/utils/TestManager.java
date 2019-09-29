@@ -12,8 +12,6 @@ public class TestManager {
     public TestManager(int arrSize) {
         this.arr = Arrays.getIntArray(arrSize);
         sortTypeToTimestamp = new HashMap<>();
-
-        trigger();
     }
 
     public void trigger() {

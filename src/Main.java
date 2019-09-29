@@ -26,46 +26,37 @@ public class Main {
             add(100);
             add(1000);
             add(10000);
-            add(10500);
         }};
         final int QTD_TESTS = 50;
 
-        List<TestManager> current;
-        Map<Integer, List<TestManager>> sizeToManager = new LinkedHashMap<>();
+        Map<Integer, Map<SortType, Double>> sizeToTotalTime = new LinkedHashMap<>();
+        TestManager currentTest;
 
         for(int currentSize : sizesToTests) {
-            sizeToManager.put(currentSize, current = new ArrayList<>(QTD_TESTS));
+            currentTest = new TestManager(currentSize);
+            sizeToTotalTime.put(currentSize, new HashMap<>());
             for(int i = 0; i < QTD_TESTS; i++) {
-                current.add(new TestManager(currentSize));
+                currentTest.trigger();
+                Map<SortType, Double> finalTimestampRatio = currentTest.getTimestampRatio();
+                finalTimestampRatio.forEach((key, value) -> sizeToTotalTime.get(currentSize).merge(key, value, Double::sum));
             }
         }
 
-        sizeToManager.values().forEach(managers -> {
+        sizeToTotalTime.forEach((size, timestampRatio_) -> {
             factory.addRecord(
-                    managers.get(0).size(),
-                    (managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.BUBBLE_SORT)).sum()
-                            / QTD_TESTS) / (managers.get(0).size() >= 10000 ? 1e3 : 1) + (managers.get(0).size() >= 1e3 ? " us" : " ns"),
-                    (managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.SELECTION_SORT)).sum()
-                            / QTD_TESTS) / (managers.get(0).size() >= 10000 ? 1e3 : 1) + (managers.get(0).size() >= 1e3 ? " us" : " ns"),
-                    (managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.INSERTION_SORT)).sum()
-                            / QTD_TESTS) / (managers.get(0).size() >= 10000 ? 1e3 : 1) + (managers.get(0).size() >= 1e3 ? " us" : " ns"),
-                    (managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.MERGE_SORT)).sum()
-                            / QTD_TESTS) / (managers.get(0).size() >= 10000 ? 1e3 : 1) + (managers.get(0).size() >= 1e3 ? " us" : " ns"),
-                    (managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.HEAP_SORT)).sum()
-                            / QTD_TESTS) / (managers.get(0).size() >= 10000 ? 1e3 : 1) + (managers.get(0).size() >= 1e3 ? " us" : " ns"),
-                    (managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.QUICK_SORT)).sum()
-                            / QTD_TESTS) / (managers.get(0).size() >= 10000 ? 1e3 : 1) + (managers.get(0).size() >= 1e3 ? " us" : " ns"),
-                    (managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.COUNT_SORT)).sum()
-                            / QTD_TESTS) / (managers.get(0).size() >= 10000 ? 1e3 : 1) + (managers.get(0).size() >= 1e3 ? " us" : " ns"),
-                    (managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.BUCKET_SORT)).sum()
-                            / QTD_TESTS) / (managers.get(0).size() >= 10000 ? 1e3 : 1) + (managers.get(0).size() >= 1e3 ? " us" : " ns"),
-                    (managers.stream().mapToDouble(manager -> manager.getTimestampRatio().get(SortType.RADIX_SORT)).sum()
-                            / QTD_TESTS) / (managers.get(0).size() >= 10000 ? 1e3 : 1) + (managers.get(0).size() >= 1e3 ? " us" : " ns")
+                    size,
+                    timestampRatio_.get(SortType.BUBBLE_SORT)/50    / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.SELECTION_SORT)/50 / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.INSERTION_SORT)/50 / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.MERGE_SORT)/50     / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.HEAP_SORT)/50      / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.QUICK_SORT)/50     / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.COUNT_SORT)/50     / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.BUCKET_SORT)/50    / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.RADIX_SORT)/50     / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns")
             );
-            managers.clear();
-            managers = null;
             //Runs garbage collector
-            System.gc();
+            //System.gc();
         });
         factory.close();
         
