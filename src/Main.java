@@ -45,15 +45,15 @@ public class Main {
         sizeToTotalTime.forEach((size, timestampRatio_) -> {
             factory.addRecord(
                     size,
-                    timestampRatio_.get(SortType.BUBBLE_SORT)/50    / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
-                    timestampRatio_.get(SortType.SELECTION_SORT)/50 / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
-                    timestampRatio_.get(SortType.INSERTION_SORT)/50 / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
-                    timestampRatio_.get(SortType.MERGE_SORT)/50     / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
-                    timestampRatio_.get(SortType.HEAP_SORT)/50      / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
-                    timestampRatio_.get(SortType.QUICK_SORT)/50     / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
-                    timestampRatio_.get(SortType.COUNT_SORT)/50     / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
-                    timestampRatio_.get(SortType.BUCKET_SORT)/50    / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns"),
-                    timestampRatio_.get(SortType.RADIX_SORT)/50     / (size >= 10000 ? 1e3 : 1) + (size >= 1e3 ? " us" : " ns")
+                    timestampRatio_.get(SortType.BUBBLE_SORT)/50    / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.SELECTION_SORT)/50 / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.INSERTION_SORT)/50 / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.MERGE_SORT)/50     / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.HEAP_SORT)/50      / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.QUICK_SORT)/50     / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.COUNT_SORT)/50     / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.BUCKET_SORT)/50    / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio_.get(SortType.RADIX_SORT)/50     / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns")
             );
             //Runs garbage collector
             //System.gc();
