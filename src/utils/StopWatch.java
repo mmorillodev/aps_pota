@@ -1,24 +1,24 @@
 package utils;
 
-class StopWatch {
+public class StopWatch {
 
     private double resultant_time;
     private double initial;
 
-    void start() {
+    public void start() {
         resultant_time = 0;
         initial = System.nanoTime();
     }
 
-    void stop() {
+    public void stop() {
         resultant_time += System.nanoTime() - initial;
     }
 
-    void resume() {
+    public void resume() {
         initial = System.nanoTime();
     }
 
-    double getResultant(boolean milli) {
-        return (milli ? resultant_time/1e3 : resultant_time);
+    public double getResultant(boolean milli) {
+        return (milli ? resultant_time/1e6 : resultant_time);
     }
 }

@@ -1,9 +1,55 @@
+import utils.SortType;
+import utils.StopWatch;
+
 import static utils.Arrays.*;
 import static java.lang.System.out;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Tests {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+//        testSorts();
+//        testMergeMaps();
+//        testStopWatch();
+    }
+
+    public static void testMergeMaps() {
+        Map<Integer, Map<SortType, Double>> sizeToTotalTime = new HashMap<>();
+        sizeToTotalTime.put(5, new HashMap<>());
+        sizeToTotalTime.get(5).put(SortType.BUBBLE_SORT, 1000.0);
+        sizeToTotalTime.get(5).put(SortType.SELECTION_SORT, 1000.0);
+        sizeToTotalTime.get(5).put(SortType.INSERTION_SORT, 1000.0);
+        sizeToTotalTime.get(5).put(SortType.MERGE_SORT, 1000.0);
+
+        Map<SortType, Double> map2 = new HashMap<>();
+        map2.put(SortType.BUBBLE_SORT, 1000.0);
+        map2.put(SortType.SELECTION_SORT, 1000.0);
+        map2.put(SortType.INSERTION_SORT, 1000.0);
+        map2.put(SortType.MERGE_SORT, 1000.0);
+
+        map2.forEach((key, value) -> sizeToTotalTime.get(5).merge(key, value, Double::sum));
+
+        out.println(sizeToTotalTime.toString());
+    }
+
+    public static void testStopWatch() throws InterruptedException {
+        StopWatch watch = new StopWatch();
+
+        watch.start();
+        Thread.sleep(1000);
+        watch.stop();
+
+        out.println(watch.getResultant(true));
+
+        watch.resume();
+        Thread.sleep(2000);
+        watch.stop();
+
+        out.println(watch.getResultant(true));
+    }
+
+    public static void testSorts() {
         int[] arr = getIntArray(10);
         int[] correctArray = arr.clone();
         int[] arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9;
