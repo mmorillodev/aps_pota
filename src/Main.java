@@ -37,7 +37,9 @@ public class Main {
             sizeToTotalTime.put(currentSize, new HashMap<>());
             for(int i = 0; i < QTD_TESTS; i++) {
                 currentTest.trigger();
-                currentTest.getTimestampRatio().forEach((key, value) -> sizeToTotalTime.get(currentSize).merge(key, value, Double::sum));
+                currentTest.getTimestampRatio().forEach((key, value) ->
+                        sizeToTotalTime.get(currentSize).merge(key, value, Double::sum)
+                );
             }
         }
 
