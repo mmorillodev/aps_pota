@@ -44,15 +44,15 @@ public class Main {
         sizeToTotalTime.forEach((size, timestampRatio) -> {
             factory.addRecord(
                     size,
-                    timestampRatio.get(SortType.BUBBLE_SORT)/QTD_TESTS    / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.SELECTION_SORT)/QTD_TESTS / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.INSERTION_SORT)/QTD_TESTS / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.MERGE_SORT)/QTD_TESTS     / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.HEAP_SORT)/QTD_TESTS      / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.QUICK_SORT)/QTD_TESTS     / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.COUNT_SORT)/QTD_TESTS     / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.BUCKET_SORT)/QTD_TESTS    / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.RADIX_SORT)/QTD_TESTS     / (size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns")
+                    timestampRatio.get(SortType.BUBBLE_SORT)    /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio.get(SortType.SELECTION_SORT) /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio.get(SortType.INSERTION_SORT) /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio.get(SortType.MERGE_SORT)     /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio.get(SortType.HEAP_SORT)      /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio.get(SortType.QUICK_SORT)     /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio.get(SortType.COUNT_SORT)     /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio.get(SortType.BUCKET_SORT)    /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
+                    timestampRatio.get(SortType.RADIX_SORT)     /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns")
             );
             //Runs garbage collector
             //System.gc();
