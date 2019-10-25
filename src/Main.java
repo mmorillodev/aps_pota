@@ -76,7 +76,7 @@ public class Main {
     }
 
     private static String getScientificNotation(double value, int size) {
-        return (value/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"));
+        return (value/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " μs" : " ns"));
     }
 
     private static void buildChart(Map<SortType, Double> totalTimeBySortType, int size) {
@@ -85,33 +85,42 @@ public class Main {
             file.createNewFile();
             PrintWriter pw = new PrintWriter(file);
             pw.print(
-                "<!DOCTYPE html>\n" +
-                    "<html>\n" +
-                    "<head>\n" +
-                    "    <meta charset='utf-8'>\n" +
-                    "    <title>Sort methods by time size " + size + "</title>\n" +
-                    "    <script src='../libs/chart.js'></script>\n" +
-                    "    <script>\n" +
-                    "        function createChart() {\n" +
-                    "            var ctx = document.getElementById('chart');\n" +
-                    "            new Chart(ctx, {\n" +
-                    "                type: 'bar',\n" +
-                    "                data: {\n" +
-                    "                    labels: " + toString(totalTimeBySortType.keySet()) + ",\n" +
-                    "                    datasets: [{\n" +
-                    "                        label: 'Time " + (size >= 1e4 ? " us" : " ns") + "',\n" +
-                    "                        backgroundColor: \"#c95948\",\n" +
-                    "                        data: " + totalTimeBySortType.values() + ",\n" +
-                    "                        borderWidth: 0\n" +
-                    "                    }]\n" +
-                    "                }\n" +
-                    "            });\n" +
-                    "        }\n" +
-                    "    </script>\n" +
-                    "</head>\n" +
-                    "<body onload='createChart()'>\n" +
-                    "    <canvas id=\"chart\"/>\n" +
-                    "</body>\n" +
+                "<!DOCTYPE html>\n"                                                                                 +
+                    "<html>\n"                                                                                      +
+                    "<head>\n"                                                                                      +
+                    "    <meta charset='utf-8'>\n"                                                                  +
+                    "    <title>Sort methods by time " + size + "</title>\n"                                        +
+                    "    <script src='../libs/chart.js'></script>\n"                                                +
+                    "    <script>\n"                                                                                +
+                    "        function createChart() {\n"                                                            +
+                    "            var ctx = document.getElementById('chart');\n"                                     +
+                    "            new Chart(ctx, {\n"                                                                +
+                    "                type: 'bar',\n"                                                                +
+                    "                data: {\n"                                                                     +
+                    "                    labels: " + toString(totalTimeBySortType.keySet()) + ",\n"                 +
+                    "                    datasets: [{\n"                                                            +
+                    "                        label: 'Time " + (size >= 1e4 ? " μs" : " ns") + "',\n"                +
+                    "                        backgroundColor: \"#c95948\",\n"                                       +
+                    "                        data: " + totalTimeBySortType.values() + ",\n"                         +
+                    "                        borderWidth: 0\n"                                                      +
+                    "                    }]\n"                                                                      +
+                    "                },\n"                                                                          +
+                    "                options: {\n"                                                                  +
+                    "                     title: {\n"                                                               +
+                    "                        display: true,\n"                                                      +
+                    "                        text: 'Sort methods by time. Array size " + size + "' \n"              +
+                    "                     },\n"                                                                     +
+                    "                     legend: {\n"                                                              +
+                    "                        display: false\n"                                                      +
+                    "                     }\n"                                                                      +
+                    "                }\n"                                                                           +
+                    "            });\n"                                                                             +
+                    "        }\n"                                                                                   +
+                    "    </script>\n"                                                                               +
+                    "</head>\n"                                                                                     +
+                    "<body onload='createChart()'>\n"                                                               +
+                    "    <canvas id=\"chart\"/>\n"                                                                  +
+                    "</body>\n"                                                                                     +
                     "</html>"
             );
             pw.close();
