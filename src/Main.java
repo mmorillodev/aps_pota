@@ -100,7 +100,7 @@ public class Main {
                     "                    labels: " + toString(totalTimeBySortType.keySet()) + ",\n" +
                     "                    datasets: [{\n" +
                     "                        label: 'Time " + (size >= 1e4 ? " us" : " ns") + "',\n" +
-                    "                        backgroundColor: \"#48C9B0\",\n" +
+                    "                        backgroundColor: \"#c95948\",\n" +
                     "                        data: " + totalTimeBySortType.values() + ",\n" +
                     "                        borderWidth: 0\n" +
                     "                    }]\n" +
