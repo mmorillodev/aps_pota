@@ -2,9 +2,14 @@ import utils.CSVFactory;
 import utils.SortType;
 import utils.TestManager;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 public class Main {
+
+    private static final int QTD_TESTS = 50;
 
     public static void main(String[] args) {
         long beforeUsedMem = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
@@ -27,7 +32,6 @@ public class Main {
             add(1000);
             add(10000);
         }};
-        final int QTD_TESTS = 50;
 
         Map<Integer, Map<SortType, Double>> sizeToTotalTime = new LinkedHashMap<>();
         TestManager currentTest;
@@ -43,25 +47,88 @@ public class Main {
             }
         }
 
-        sizeToTotalTime.forEach((size, timestampRatio) -> {
+        sizeToTotalTime.forEach((size, totalTimeBySortType) -> {
             factory.addRecord(
                     size,
-                    timestampRatio.get(SortType.BUBBLE_SORT)    /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.SELECTION_SORT) /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.INSERTION_SORT) /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.MERGE_SORT)     /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.HEAP_SORT)      /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.QUICK_SORT)     /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.COUNT_SORT)     /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.BUCKET_SORT)    /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"),
-                    timestampRatio.get(SortType.RADIX_SORT)     /QTD_TESTS/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns")
+                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.BUBBLE_SORT), size),
+                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.SELECTION_SORT), size),
+                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.INSERTION_SORT), size),
+                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.MERGE_SORT), size),
+                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.HEAP_SORT), size),
+                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.QUICK_SORT), size),
+                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.COUNT_SORT), size),
+                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.BUCKET_SORT), size),
+                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.RADIX_SORT), size)
             );
-            //Runs garbage collector
-            //System.gc();
+            buildChart(totalTimeBySortType, size);
         });
         factory.close();
         
         long afterUsedMem = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         System.out.println("Program used " + (afterUsedMem-beforeUsedMem)/1e6 + "MB");
+    }
+
+    private static double calcAndSetAverage(Map<SortType, Double> totalTimeBySortType, SortType sortType) {
+        double avg = totalTimeBySortType.get(sortType)/QTD_TESTS;
+        totalTimeBySortType.put(sortType, avg);
+
+        return avg;
+    }
+
+    private static String getScientificNotation(double value, int size) {
+        return (value/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " us" : " ns"));
+    }
+
+    private static void buildChart(Map<SortType, Double> totalTimeBySortType, int size) {
+        File file = new File("./reports/chart" + size + ".html");
+        try {
+            file.createNewFile();
+            PrintWriter pw = new PrintWriter(file);
+            pw.print(
+                "<!DOCTYPE html>\n" +
+                    "<html>\n" +
+                    "<head>\n" +
+                    "    <meta charset='utf-8'>\n" +
+                    "    <title>Chart " + size + "</title>\n" +
+                    "    <script src='../libs/chart.js'></script>\n" +
+                    "    <script>\n" +
+                    "        function createChart() {\n" +
+                    "            var ctx = document.getElementById('chart');\n" +
+                    "            new Chart(ctx, {\n" +
+                    "                type: 'bar',\n" +
+                    "                data: {\n" +
+                    "                    labels: " + toString(totalTimeBySortType.keySet()) + ",\n" +
+                    "                    datasets: [{\n" +
+                    "                        label: 'Time " + (size >= 1e4 ? " us" : " ns") + "',\n" +
+                    "                        backgroundColor: \"#48C9B0\",\n" +
+                    "                        data: " + totalTimeBySortType.values() + ",\n" +
+                    "                        borderWidth: 0\n" +
+                    "                    }]\n" +
+                    "                }\n" +
+                    "            });\n" +
+                    "        }\n" +
+                    "    </script>\n" +
+                    "</head>\n" +
+                    "<body onload='createChart()'>\n" +
+                    "    <canvas id=\"chart\"/>\n" +
+                    "</body>\n" +
+                    "</html>"
+            );
+            pw.close();
+        } catch (IOException e) {
+            System.err.println("Failed creating file chart" + size + ".html\nError: " + e.getMessage());
+        }
+    }
+
+    private static String toString(Set<SortType> sortTypes) {
+        final StringBuilder builder = new StringBuilder("[");
+
+        int i = 0;
+        for(SortType element : sortTypes) {
+            builder.append("'" + element + "'").append(i < sortTypes.size() - 1 ? ", " : "");
+            i++;
+        }
+
+        return builder.append("]").toString();
     }
 }

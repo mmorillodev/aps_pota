@@ -21,7 +21,7 @@ public class TestManager {
         StopWatch stopWatch = new StopWatch();
 
         aux = new int[arr.length];
-        arraycopy(arr, 0, aux, 0, arr.length);
+        copyArrTo(aux);
 
         stopWatch.start();
         Arrays.bubbleSort(aux);
@@ -31,7 +31,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        arraycopy(arr, 0, aux, 0, arr.length);
+        copyArrTo(aux);
 
         stopWatch.start();
         Arrays.selectionSort(aux);
@@ -41,7 +41,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        arraycopy(arr, 0, aux, 0, arr.length);
+        copyArrTo(aux);
 
         stopWatch.start();
         Arrays.insertionSort(aux);
@@ -51,7 +51,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        arraycopy(arr, 0, aux, 0, arr.length);
+        copyArrTo(aux);
 
         stopWatch.start();
         Arrays.heapSort(aux);
@@ -61,7 +61,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        arraycopy(arr, 0, aux, 0, arr.length);
+        copyArrTo(aux);
 
         stopWatch.start();
         Arrays.mergeSort(aux);
@@ -71,7 +71,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        arraycopy(arr, 0, aux, 0, arr.length);
+        copyArrTo(aux);
 
         stopWatch.start();
         Arrays.quickSort(aux);
@@ -81,7 +81,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        arraycopy(arr, 0, aux, 0, arr.length);
+        copyArrTo(aux);
 
         stopWatch.start();
         Arrays.countSort(aux);
@@ -91,7 +91,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        arraycopy(arr, 0, aux, 0, arr.length);
+        copyArrTo(aux);
 
         stopWatch.start();
         Arrays.bucketSort(aux);
@@ -101,7 +101,7 @@ public class TestManager {
 
         //-------------------------------------------------------------
 
-        arraycopy(arr, 0, aux, 0, arr.length);
+        copyArrTo(aux);
 
         stopWatch.start();
         Arrays.radixSort(aux);
@@ -118,6 +118,10 @@ public class TestManager {
         this.sortTypeToTimestamp.put(SortType.BUCKET_SORT,      avgBucket);
         this.sortTypeToTimestamp.put(SortType.RADIX_SORT,       avgRadix);
         this.sortTypeToTimestamp.put(SortType.COUNT_SORT,       avgCount);
+    }
+
+    private void copyArrTo(int[] to) {
+        arraycopy(arr, 0, to, 0, arr.length);
     }
 
     public Map<SortType, Double> getTimestampRatio() {
