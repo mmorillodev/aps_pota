@@ -113,11 +113,11 @@ public class TestManager {
         this.sortTypeToTimestamp.put(SortType.SELECTION_SORT,   avgSelection);
         this.sortTypeToTimestamp.put(SortType.INSERTION_SORT,   avgInsertion);
         this.sortTypeToTimestamp.put(SortType.MERGE_SORT,       avgMerge);
-        this.sortTypeToTimestamp.put(SortType.QUICK_SORT,       avgQuick);
         this.sortTypeToTimestamp.put(SortType.HEAP_SORT,        avgHeap);
+        this.sortTypeToTimestamp.put(SortType.QUICK_SORT,       avgQuick);
+        this.sortTypeToTimestamp.put(SortType.COUNT_SORT,       avgCount);
         this.sortTypeToTimestamp.put(SortType.BUCKET_SORT,      avgBucket);
         this.sortTypeToTimestamp.put(SortType.RADIX_SORT,       avgRadix);
-        this.sortTypeToTimestamp.put(SortType.COUNT_SORT,       avgCount);
     }
 
     private void copyArrTo(int[] to) {

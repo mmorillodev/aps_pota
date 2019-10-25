@@ -31,6 +31,7 @@ public class Main {
             add(100);
             add(1000);
             add(10000);
+            add(15000);
         }};
 
         Map<Integer, Map<SortType, Double>> sizeToTotalTime = new LinkedHashMap<>();
@@ -48,7 +49,22 @@ public class Main {
         }
 
         sizeToTotalTime.forEach((size, totalTimeBySortType) -> {
-            factory.addRecord(getData(size, totalTimeBySortType));
+            setAverages(totalTimeBySortType);
+            setScientificNotation(totalTimeBySortType, size);
+
+            factory.addRecord(
+                size,
+                totalTimeBySortType.get(SortType.BUBBLE_SORT)       + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.SELECTION_SORT)    + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.INSERTION_SORT)    + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.MERGE_SORT)        + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.HEAP_SORT)         + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.QUICK_SORT)        + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.COUNT_SORT)        + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.BUCKET_SORT)       + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.RADIX_SORT)        + (size >= 1e4 ? " ms" : " ns")
+            );
+
             buildChart(totalTimeBySortType, size);
         });
         factory.close();
@@ -57,25 +73,11 @@ public class Main {
         System.out.println("Program used " + (afterUsedMem-beforeUsedMem)/1e6 + "MB");
     }
 
-    public static String[] getData(int size, Map<SortType, Double> totalTimeBySortType) {
-        setAverages(totalTimeBySortType);
-        setScientificNotation(size, totalTimeBySortType);
-
-        String[] statements = new String[totalTimeBySortType.size()];
-
-        int i = 0;
-        for(SortType sortType : totalTimeBySortType.keySet()) {
-            statements[i++] = totalTimeBySortType.get(sortType) + (size >= 1e4 ? " ms" : " ns");
-        }
-
-        return statements;
-    }
-
     private static void setAverages(Map<SortType, Double> totalTimeBySortType) {
         totalTimeBySortType.forEach(((sortType, totalTime) -> totalTimeBySortType.put(sortType, totalTimeBySortType.get(sortType)/QTD_TESTS)));
     }
 
-    private static void setScientificNotation(final int size, Map<SortType, Double> totalTimeBySortType) {
+    private static void setScientificNotation(Map<SortType, Double> totalTimeBySortType, int size) {
         totalTimeBySortType.forEach((sortType, totalTime) ->
                 totalTimeBySortType.put(sortType, totalTimeBySortType.get(sortType)/(size >= 1e4 ? 1e6 : 1))
         );

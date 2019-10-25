@@ -31,8 +31,6 @@ public class Tests {
         map2.forEach((key, value) -> sizeToTotalTime.get(10000).merge(key, value, Double::sum));
 
         out.println(sizeToTotalTime.toString());
-
-        out.println(Arrays.toString(Main.getData(10000, map2)));
     }
 
     public static void testStopWatch() throws InterruptedException {
