@@ -48,18 +48,7 @@ public class Main {
         }
 
         sizeToTotalTime.forEach((size, totalTimeBySortType) -> {
-            factory.addRecord(
-                    size,
-                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.BUBBLE_SORT), size),
-                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.SELECTION_SORT), size),
-                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.INSERTION_SORT), size),
-                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.MERGE_SORT), size),
-                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.HEAP_SORT), size),
-                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.QUICK_SORT), size),
-                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.COUNT_SORT), size),
-                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.BUCKET_SORT), size),
-                    getScientificNotation(calcAndSetAverage(totalTimeBySortType, SortType.RADIX_SORT), size)
-            );
+            factory.addRecord(getData(size, totalTimeBySortType));
             buildChart(totalTimeBySortType, size);
         });
         factory.close();
@@ -68,15 +57,28 @@ public class Main {
         System.out.println("Program used " + (afterUsedMem-beforeUsedMem)/1e6 + "MB");
     }
 
-    private static double calcAndSetAverage(Map<SortType, Double> totalTimeBySortType, SortType sortType) {
-        double avg = totalTimeBySortType.get(sortType)/QTD_TESTS;
-        totalTimeBySortType.put(sortType, avg);
+    public static String[] getData(int size, Map<SortType, Double> totalTimeBySortType) {
+        setAverages(totalTimeBySortType);
+        setScientificNotation(size, totalTimeBySortType);
 
-        return avg;
+        String[] statements = new String[totalTimeBySortType.size()];
+
+        int i = 0;
+        for(SortType sortType : totalTimeBySortType.keySet()) {
+            statements[i++] = totalTimeBySortType.get(sortType) + (size >= 1e4 ? " ms" : " ns");
+        }
+
+        return statements;
     }
 
-    private static String getScientificNotation(double value, int size) {
-        return (value/(size >= 1e4 ? 1e3 : 1) + (size >= 1e4 ? " μs" : " ns"));
+    private static void setAverages(Map<SortType, Double> totalTimeBySortType) {
+        totalTimeBySortType.forEach(((sortType, totalTime) -> totalTimeBySortType.put(sortType, totalTimeBySortType.get(sortType)/QTD_TESTS)));
+    }
+
+    private static void setScientificNotation(final int size, Map<SortType, Double> totalTimeBySortType) {
+        totalTimeBySortType.forEach((sortType, totalTime) ->
+                totalTimeBySortType.put(sortType, totalTimeBySortType.get(sortType)/(size >= 1e4 ? 1e6 : 1))
+        );
     }
 
     private static void buildChart(Map<SortType, Double> totalTimeBySortType, int size) {
@@ -99,7 +101,7 @@ public class Main {
                     "                data: {\n"                                                                     +
                     "                    labels: " + toString(totalTimeBySortType.keySet()) + ",\n"                 +
                     "                    datasets: [{\n"                                                            +
-                    "                        label: 'Time " + (size >= 1e4 ? " μs" : " ns") + "',\n"                +
+                    "                        label: 'Time " + (size >= 1e4 ? " ms" : " ns") + "',\n"                +
                     "                        backgroundColor: \"#c95948\",\n"                                       +
                     "                        data: " + totalTimeBySortType.values() + ",\n"                         +
                     "                        borderWidth: 0\n"                                                      +

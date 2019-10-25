@@ -9,18 +9,18 @@ import java.util.Map;
 
 public class Tests {
     public static void main(String[] args) throws InterruptedException {
-        testSorts();
-//        testMergeMaps();
+//        testSorts();
+        testMergeMaps();
 //        testStopWatch();
     }
 
     public static void testMergeMaps() {
         Map<Integer, Map<SortType, Double>> sizeToTotalTime = new HashMap<>();
-        sizeToTotalTime.put(5, new HashMap<>());
-        sizeToTotalTime.get(5).put(SortType.BUBBLE_SORT, 1000.0);
-        sizeToTotalTime.get(5).put(SortType.SELECTION_SORT, 1000.0);
-        sizeToTotalTime.get(5).put(SortType.INSERTION_SORT, 1000.0);
-        sizeToTotalTime.get(5).put(SortType.MERGE_SORT, 1000.0);
+        sizeToTotalTime.put(10000, new HashMap<>());
+        sizeToTotalTime.get(10000).put(SortType.BUBBLE_SORT, 10000000.0);
+        sizeToTotalTime.get(10000).put(SortType.SELECTION_SORT, 10000000.0);
+        sizeToTotalTime.get(10000).put(SortType.INSERTION_SORT, 10000000.0);
+        sizeToTotalTime.get(10000).put(SortType.MERGE_SORT, 100000000.0);
 
         Map<SortType, Double> map2 = new HashMap<>();
         map2.put(SortType.BUBBLE_SORT, 1000.0);
@@ -28,9 +28,11 @@ public class Tests {
         map2.put(SortType.INSERTION_SORT, 1000.0);
         map2.put(SortType.MERGE_SORT, 1000.0);
 
-        map2.forEach((key, value) -> sizeToTotalTime.get(5).merge(key, value, Double::sum));
+        map2.forEach((key, value) -> sizeToTotalTime.get(10000).merge(key, value, Double::sum));
 
         out.println(sizeToTotalTime.toString());
+
+        out.println(Arrays.toString(Main.getData(10000, map2)));
     }
 
     public static void testStopWatch() throws InterruptedException {
