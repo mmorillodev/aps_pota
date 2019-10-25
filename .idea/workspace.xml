@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516a5954-08d0-4dcb-a021-13a601b88fd9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/META-INF/aps_pota.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Tests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/Arrays.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/Arrays.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/CSVFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/CSVFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/SortType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/SortType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/StopWatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/StopWatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/TestManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/TestManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/TestManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/TestManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Arrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Arrays.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,9 +47,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="APS_POTA" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Tests" />
       <module name="APS_POTA" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -69,6 +65,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Tests" />
       </list>
     </recent_temporary>
   </component>
@@ -83,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571669367919</updated>
       <workItem from="1571669375903" duration="129000" />
-      <workItem from="1572010389265" duration="10188000" />
+      <workItem from="1572010389265" duration="12531000" />
     </task>
     <servers />
   </component>

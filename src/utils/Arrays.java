@@ -32,11 +32,77 @@ public class Arrays {
     }
 
     public static void mergeSort(int[] arr) {
+        mergeSort(arr, arr.length);
+    }
 
+    private static void mergeSort(int[] arr, int n) {
+        if (n < 2) {
+            return;
+        }
+        int mid = n / 2;
+        int[] l = new int[mid];
+        int[] r = new int[n - mid];
+
+        for (int i = 0; i < mid; i++) {
+            l[i] = arr[i];
+        }
+        for (int i = mid; i < n; i++) {
+            r[i - mid] = arr[i];
+        }
+        mergeSort(l, mid);
+        mergeSort(r, n - mid);
+
+        merge(arr, l, r, mid, n - mid);
+    }
+
+    private static void merge(int[] a, int[] l, int[] r, int left, int right) {
+        int i = 0, j = 0, k = 0;
+        while (i < left && j < right) {
+            if (l[i] <= r[j]) {
+                a[k++] = l[i++];
+            }
+            else {
+                a[k++] = r[j++];
+            }
+        }
+        while (i < left) {
+            a[k++] = l[i++];
+        }
+        while (j < right) {
+            a[k++] = r[j++];
+        }
     }
 
     public static void heapSort(int[] arr) {
+        int n = arr.length;
 
+        for (int i = n / 2 - 1; i >= 0; i--)
+            heapify(arr, n, i);
+
+        int temp;
+        for (int i=n-1; i>=0; i--) {
+            swap(arr, 0, i);
+
+            heapify(arr, i, 0);
+        }
+    }
+
+    private static void heapify(int arr[], int n, int i) {
+        int largest = i;
+        int left = 2*i + 1;
+        int right = 2*i + 2;
+
+        if (left < n && arr[left] > arr[largest])
+            largest = left;
+
+        if (right < n && arr[right] > arr[largest])
+            largest = right;
+
+        if (largest != i) {
+            swap(arr, i, largest);
+
+            heapify(arr, n, largest);
+        }
     }
 
     public static void quickSort(int[] arr) {

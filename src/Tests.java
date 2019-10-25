@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Tests {
     public static void main(String[] args) throws InterruptedException {
-//        testSorts();
+        testSorts();
 //        testMergeMaps();
 //        testStopWatch();
     }
@@ -71,28 +71,28 @@ public class Tests {
             errorMsg += "Bubble";
         }
         if(!areEquals(arr2, correctArray)) {
-            errorMsg += (errorMsg.length() > 0 ? ", " : "") + "Selection";
+            errorMsg += (errorMsg.length() > 0 ? "\n" : "") + "Selection";
         }
         if(!areEquals(arr3, correctArray)) {
-            errorMsg += (errorMsg.length() > 0 ? ", " : "") + "Insertion";
+            errorMsg += (errorMsg.length() > 0 ? "\n" : "") + "Insertion";
         }
         if(!areEquals(arr4, correctArray)) {
-            errorMsg += (errorMsg.length() > 0 ? ", " : "") + "Merge";
+            errorMsg += (errorMsg.length() > 0 ? "\n" : "") + "Merge";
         }
         if(!areEquals(arr5, correctArray)) {
-            errorMsg += (errorMsg.length() > 0 ? ", " : "") + "Quick";
+            errorMsg += (errorMsg.length() > 0 ? "\n" : "") + "Quick";
         }
         if(!areEquals(arr6, correctArray)) {
-            errorMsg += (errorMsg.length() > 0 ? ", " : "") + "Count";
+            errorMsg += (errorMsg.length() > 0 ? "\n" : "") + "Count";
         }
         if(!areEquals(arr7, correctArray)) {
-            errorMsg += (errorMsg.length() > 0 ? ", " : "") + "Bucket";
+            errorMsg += (errorMsg.length() > 0 ? "\n" : "") + "Bucket";
         }
         if(!areEquals(arr8, correctArray)) {
-            errorMsg += (errorMsg.length() > 0 ? ", " : "") + "Radix";
+            errorMsg += (errorMsg.length() > 0 ? "\n" : "") + "Radix";
         }
         if(!areEquals(arr9, correctArray)) {
-            errorMsg += (errorMsg.length() > 0 ? " and " : "") + "Heap";
+            errorMsg += (errorMsg.length() > 0 ? "\n" : "") + "Heap";
         }
 
         out.println("bubble:\t\t"        + Arrays.toString(arr1));
@@ -106,7 +106,7 @@ public class Tests {
         out.println("radix:\t\t"         + Arrays.toString(arr8));
 
         if(errorMsg.length() > 0) {
-            System.err.println("Invalid sort methods: " + errorMsg);
+            System.err.println("Invalid sort methods:\n" + errorMsg);
         }
         else {
             out.println("Everything OK!");
