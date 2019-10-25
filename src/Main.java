@@ -80,7 +80,7 @@ public class Main {
     }
 
     private static void buildChart(Map<SortType, Double> totalTimeBySortType, int size) {
-        File file = new File("./reports/chart" + size + ".html");
+        File file = new File("./reports/chart_size_" + size + ".html");
         try {
             file.createNewFile();
             PrintWriter pw = new PrintWriter(file);
@@ -89,7 +89,7 @@ public class Main {
                     "<html>\n" +
                     "<head>\n" +
                     "    <meta charset='utf-8'>\n" +
-                    "    <title>Chart " + size + "</title>\n" +
+                    "    <title>Sort methods by time size " + size + "</title>\n" +
                     "    <script src='../libs/chart.js'></script>\n" +
                     "    <script>\n" +
                     "        function createChart() {\n" +
