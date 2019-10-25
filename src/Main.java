@@ -76,7 +76,7 @@ public class Main {
     }
 
     private static String getScientificNotation(double value, int size) {
-        return (value/(size >= 10000 ? 1e3 : 1) + (size >= 1e4 ? " μs" : " ns"));
+        return (value/(size >= 1e4 ? 1e3 : 1) + (size >= 1e4 ? " μs" : " ns"));
     }
 
     private static void buildChart(Map<SortType, Double> totalTimeBySortType, int size) {
