@@ -134,7 +134,7 @@ public class Main {
 
         int i = 0;
         for(SortType element : sortTypes) {
-            builder.append("'" + element + "'").append(i < sortTypes.size() - 1 ? ", " : "");
+            builder.append("'").append(element).append("'").append(i < sortTypes.size() - 1 ? ", " : "");
             i++;
         }
 
