@@ -15,19 +15,26 @@ public class TestManager {
     }
 
     public void trigger() {
-        double avgBubble, avgSelection, avgInsertion, avgHeap, avgMerge, avgQuick,  avgCount, avgBucket, avgRadix;
-        int[] aux;
+        double  timestampBubble,
+                timestampSelection,
+                timestampInsertion,
+                timestampHeap,
+                timestampMerge,
+                timestampQuick,
+                timestampCount,
+                timestampBucket,
+                timestampRadix;
 
         StopWatch stopWatch = new StopWatch();
 
-        aux = new int[arr.length];
+        int[] aux = new int[arr.length];
         copyArrTo(aux);
 
         stopWatch.start();
         Arrays.bubbleSort(aux);
         stopWatch.stop();
 
-        avgBubble = stopWatch.getResultant(false);
+        timestampBubble = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
@@ -37,7 +44,7 @@ public class TestManager {
         Arrays.selectionSort(aux);
         stopWatch.stop();
 
-        avgSelection = stopWatch.getResultant(false);
+        timestampSelection = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
@@ -47,7 +54,7 @@ public class TestManager {
         Arrays.insertionSort(aux);
         stopWatch.stop();
 
-        avgInsertion = stopWatch.getResultant(false);
+        timestampInsertion = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
@@ -57,7 +64,7 @@ public class TestManager {
         Arrays.heapSort(aux);
         stopWatch.stop();
 
-        avgHeap = stopWatch.getResultant(false);
+        timestampHeap = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
@@ -67,7 +74,7 @@ public class TestManager {
         Arrays.mergeSort(aux);
         stopWatch.stop();
 
-        avgMerge = stopWatch.getResultant(false);
+        timestampMerge = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
@@ -77,7 +84,7 @@ public class TestManager {
         Arrays.quickSort(aux);
         stopWatch.stop();
 
-        avgQuick = stopWatch.getResultant(false);
+        timestampQuick = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
@@ -87,7 +94,7 @@ public class TestManager {
         Arrays.countSort(aux);
         stopWatch.stop();
 
-        avgCount = stopWatch.getResultant(false);
+        timestampCount = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
@@ -97,7 +104,7 @@ public class TestManager {
         Arrays.bucketSort(aux);
         stopWatch.stop();
 
-        avgBucket = stopWatch.getResultant(false);
+        timestampBucket = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
@@ -107,17 +114,17 @@ public class TestManager {
         Arrays.radixSort(aux);
         stopWatch.stop();
 
-        avgRadix = stopWatch.getResultant(false);
+        timestampRadix = stopWatch.getResultant(false);
 
-        this.sortTypeToTimestamp.put(SortType.BUBBLE_SORT,      avgBubble);
-        this.sortTypeToTimestamp.put(SortType.SELECTION_SORT,   avgSelection);
-        this.sortTypeToTimestamp.put(SortType.INSERTION_SORT,   avgInsertion);
-        this.sortTypeToTimestamp.put(SortType.MERGE_SORT,       avgMerge);
-        this.sortTypeToTimestamp.put(SortType.HEAP_SORT,        avgHeap);
-        this.sortTypeToTimestamp.put(SortType.QUICK_SORT,       avgQuick);
-        this.sortTypeToTimestamp.put(SortType.COUNT_SORT,       avgCount);
-        this.sortTypeToTimestamp.put(SortType.BUCKET_SORT,      avgBucket);
-        this.sortTypeToTimestamp.put(SortType.RADIX_SORT,       avgRadix);
+        this.sortTypeToTimestamp.put(SortType.BUBBLE_SORT,      timestampBubble);
+        this.sortTypeToTimestamp.put(SortType.SELECTION_SORT,   timestampSelection);
+        this.sortTypeToTimestamp.put(SortType.INSERTION_SORT,   timestampInsertion);
+        this.sortTypeToTimestamp.put(SortType.MERGE_SORT,       timestampMerge);
+        this.sortTypeToTimestamp.put(SortType.HEAP_SORT,        timestampHeap);
+        this.sortTypeToTimestamp.put(SortType.QUICK_SORT,       timestampQuick);
+        this.sortTypeToTimestamp.put(SortType.COUNT_SORT,       timestampCount);
+        this.sortTypeToTimestamp.put(SortType.BUCKET_SORT,      timestampBucket);
+        this.sortTypeToTimestamp.put(SortType.RADIX_SORT,       timestampRadix);
     }
 
     private void copyArrTo(int[] to) {
