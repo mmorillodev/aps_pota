@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516a5954-08d0-4dcb-a021-13a601b88fd9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/TestManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/TestManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Tests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/Arrays.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/CSVFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/SortType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/StopWatch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/TestManager.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +37,10 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -87,7 +97,7 @@
       <updated>1571669367919</updated>
       <workItem from="1571669375903" duration="129000" />
       <workItem from="1572010389265" duration="15803000" />
-      <workItem from="1572126709843" duration="1121000" />
+      <workItem from="1572126709843" duration="1595000" />
     </task>
     <servers />
   </component>
