@@ -1,8 +1,11 @@
 import utils.SortType;
 import utils.StopWatch;
+import utils.file.FileLoader;
 
 import static utils.Arrays.*;
 import static java.lang.System.out;
+
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,8 +13,18 @@ import java.util.Map;
 public class Tests {
     public static void main(String[] args) throws InterruptedException {
 //        testSorts();
-        testMergeMaps();
+//        testMergeMaps();
+        testFileLoader();
 //        testStopWatch();
+    }
+
+    public static void testFileLoader() {
+        try {
+            FileLoader loader = new FileLoader(System.getProperty("user.dir") + "/src/utils/file/template.html");
+            out.println(loader.loadAsString());
+        } catch (IOException e) {
+            out.println(e.getMessage());
+        }
     }
 
     public static void testMergeMaps() {

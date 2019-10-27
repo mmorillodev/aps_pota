@@ -2,21 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516a5954-08d0-4dcb-a021-13a601b88fd9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utils/file/FileLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/file/template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Tests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/Arrays.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/CSVFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/SortType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/StopWatch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/TestManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/CSVFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/file/CSVFactory.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -28,6 +34,7 @@
   </component>
   <component name="ProjectId" id="1SWBFPzbQA7BmzYcjeBDHnNVzQd" />
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -44,6 +51,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mathe\JavaExercicios\aps_pota\src\utils\file" />
       <recent name="C:\Users\Nescara\Java-projects\APS_POTA\libs" />
       <recent name="C:\Users\Nescara\Java-projects\APS_POTA\reports" />
     </key>
@@ -97,7 +105,8 @@
       <updated>1571669367919</updated>
       <workItem from="1571669375903" duration="129000" />
       <workItem from="1572010389265" duration="15803000" />
-      <workItem from="1572126709843" duration="1595000" />
+      <workItem from="1572126709843" duration="2182000" />
+      <workItem from="1572137746027" duration="5579000" />
     </task>
     <servers />
   </component>
