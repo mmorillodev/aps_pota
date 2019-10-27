@@ -26,13 +26,7 @@ public class Main {
                 "Bucket",
                 "Radix"
         );
-        final List<Integer> sizesToTest = new ArrayList<Integer>(5){{
-            add(5);
-            add(50);
-            add(100);
-            add(1000);
-            add(10000);
-        }};
+        final List<Integer> sizesToTest = Arrays.asList(5, 50, 100, 1000, 10000);
 
         Map<Integer, Map<SortType, Double>> sizeToTotalTime = new LinkedHashMap<>();
         TestManager currentTest;
@@ -74,7 +68,9 @@ public class Main {
     }
 
     private static void setAverages(Map<SortType, Double> totalTimeBySortType) {
-        totalTimeBySortType.forEach(((sortType, totalTime) -> totalTimeBySortType.put(sortType, totalTimeBySortType.get(sortType)/QTD_TESTS)));
+        totalTimeBySortType.forEach(((sortType, totalTime) ->
+                totalTimeBySortType.put(sortType, totalTimeBySortType.get(sortType)/QTD_TESTS))
+        );
     }
 
     private static void setScientificNotation(Map<SortType, Double> totalTimeBySortType, int size) {
