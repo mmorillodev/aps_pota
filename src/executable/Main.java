@@ -30,7 +30,7 @@ public class Main {
                 "Bucket",
                 "Radix"
         );
-        final List<Integer> sizesToTest = new ArrayList<Integer>() {{
+        final Set<Integer> sizesToTest = new HashSet<Integer>() {{
             ScannerUtils scanner = new ScannerUtils();
             for(int entry = 1; entry > 0; ) {
                 entry = scanner.getInt("Enter the test length (greater than 0): ");
