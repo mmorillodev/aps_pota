@@ -1,4 +1,4 @@
-package utils.file;
+package utils.io;
 
 import java.io.PrintWriter;
 import java.io.IOException;

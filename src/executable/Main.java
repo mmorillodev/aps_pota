@@ -1,7 +1,10 @@
-import utils.file.CSVFactory;
+package executable;
+
+import utils.io.CSVFactory;
 import utils.SortType;
 import utils.TestManager;
-import utils.file.FileLoader;
+import utils.io.FileLoader;
+import utils.io.ScannerUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +17,8 @@ public class Main {
 
     public static void main(String[] args) {
         long beforeUsedMem = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-        final CSVFactory factory = new CSVFactory(System.getProperty("user.dir") + "\\reports\\report.csv",
+        final CSVFactory factory = new CSVFactory(
+                System.getProperty("user.dir") + "\\reports\\report.csv",
                 "Test size",
                 "Bubble",
                 "Selection",
@@ -26,7 +30,13 @@ public class Main {
                 "Bucket",
                 "Radix"
         );
-        final List<Integer> sizesToTest = Arrays.asList(5, 50, 100, 1000, 10000);
+        final List<Integer> sizesToTest = new ArrayList<Integer>() {{
+            ScannerUtils scanner = new ScannerUtils();
+            for(int entry = 1; entry > 0; ) {
+                entry = scanner.getInt("Enter the test length (greater than 0): ");
+                if(entry > 0) add(entry);
+            }
+        }};
 
         Map<Integer, Map<SortType, Double>> sizeToTotalTime = new LinkedHashMap<>();
         TestManager currentTest;
@@ -37,7 +47,7 @@ public class Main {
             for(int i = 0; i < QTD_TESTS; i++) {
                 currentTest.trigger();
                 currentTest.getTimestampRatio().forEach((key, value) ->
-                        sizeToTotalTime.get(currentSize).merge(key, value, Double::sum)
+                    sizeToTotalTime.get(currentSize).merge(key, value, Double::sum)
                 );
             }
         }
@@ -85,16 +95,15 @@ public class Main {
             file.createNewFile();
 
             PrintWriter pw = new PrintWriter(file);
-            FileLoader loader = new FileLoader(System.getProperty("user.dir") + "/src/utils/file/template.html");
+            FileLoader loader = new FileLoader(System.getProperty("user.dir") + "/src/utils/resources/template.html");
 
             String html = loader.loadAsString()
-                        .replace("$page_title", "Sort methods by time " + size)
+                        .replace("$page_title", "Test length " + size)
                         .replace("$labels", toString(totalTimeBySortType.keySet()))
                         .replace("$bar_label", "Time" + (size >= 1e4 ? " ms" : " ns"))
                         .replace("$data", totalTimeBySortType.values().toString())
                         .replace("$title", "Sort methods by time. Array size " + size);
 
-            System.out.println(html);
             pw.print(html);
             loader.close();
             pw.close();

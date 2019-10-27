@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516a5954-08d0-4dcb-a021-13a601b88fd9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utils/io/ScannerUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Tests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/file/CSVFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/file/FileLoader$ClosedStreamException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/file/FileLoader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/file/template.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executable/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executable/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/file/CSVFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/io/CSVFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/file/FileLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/io/FileLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/file/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/resources/template.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +58,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mathe\JavaExercicios\aps_pota\src\utils\resources" />
       <recent name="C:\Users\mathe\JavaExercicios\aps_pota\src\utils\file" />
       <recent name="C:\Users\Nescara\Java-projects\APS_POTA\libs" />
       <recent name="C:\Users\Nescara\Java-projects\APS_POTA\reports" />
@@ -65,14 +78,14 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="executable.Main" />
       <module name="APS_POTA" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Tests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="executable.Tests" />
       <module name="APS_POTA" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,7 +114,8 @@
       <workItem from="1571669375903" duration="129000" />
       <workItem from="1572010389265" duration="15803000" />
       <workItem from="1572126709843" duration="2182000" />
-      <workItem from="1572137746027" duration="5979000" />
+      <workItem from="1572137746027" duration="6215000" />
+      <workItem from="1572206527460" duration="1581000" />
     </task>
     <servers />
   </component>

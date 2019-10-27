@@ -1,6 +1,8 @@
+package executable;
+
 import utils.SortType;
 import utils.StopWatch;
-import utils.file.FileLoader;
+import utils.io.FileLoader;
 
 import static utils.Arrays.*;
 import static java.lang.System.out;
