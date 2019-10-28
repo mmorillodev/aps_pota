@@ -27,92 +27,74 @@ public class TestManager {
 
         StopWatch stopWatch = new StopWatch();
         
-        this.arr = Arrats.getIntArray(this.arrSize);
-        int[] aux = new int[this.arrSize];
-        copyArrTo(aux);
+        int[] arr = Arrats.getIntArray(this.arrSize);
 
         stopWatch.start();
-        Arrays.bubbleSort(aux);
+        Arrays.bubbleSort(copyArr(arr));
         stopWatch.stop();
 
         timestampBubble = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
-        copyArrTo(aux);
-
         stopWatch.start();
-        Arrays.selectionSort(aux);
+        Arrays.selectionSort(copyArr(arr));
         stopWatch.stop();
 
         timestampSelection = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
-        copyArrTo(aux);
-
         stopWatch.start();
-        Arrays.insertionSort(aux);
+        Arrays.insertionSort(copyArr(arr));
         stopWatch.stop();
 
         timestampInsertion = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
-        copyArrTo(aux);
-
         stopWatch.start();
-        Arrays.heapSort(aux);
+        Arrays.heapSort(copyArr(arr));
         stopWatch.stop();
 
         timestampHeap = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
-        copyArrTo(aux);
-
         stopWatch.start();
-        Arrays.mergeSort(aux);
+        Arrays.mergeSort(copyArr(arr));
         stopWatch.stop();
 
         timestampMerge = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
-        copyArrTo(aux);
-
         stopWatch.start();
-        Arrays.quickSort(aux);
+        Arrays.quickSort(copyArr(arr));
         stopWatch.stop();
 
         timestampQuick = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
-        copyArrTo(aux);
-
         stopWatch.start();
-        Arrays.countSort(aux);
+        Arrays.countSort(copyArr(arr));
         stopWatch.stop();
 
         timestampCount = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
-        copyArrTo(aux);
-
         stopWatch.start();
-        Arrays.bucketSort(aux);
+        Arrays.bucketSort(copyArr(arr));
         stopWatch.stop();
 
         timestampBucket = stopWatch.getResultant(false);
 
         //-------------------------------------------------------------
 
-        copyArrTo(aux);
-
         stopWatch.start();
-        Arrays.radixSort(aux);
+        Arrays.radixSort(copyArr(arr));
         stopWatch.stop();
 
         timestampRadix = stopWatch.getResultant(false);
@@ -128,8 +110,12 @@ public class TestManager {
         this.sortTypeToTimestamp.put(SortType.RADIX_SORT,       timestampRadix);
     }
 
-    private void copyArrTo(int[] to) {
-        arraycopy(arr, 0, to, 0, arr.length);
+    private int[] copyArr(int[] from) {
+        int[] to = new int[from.length];
+        
+        arraycopy(from, 0, to, 0, from.length);
+        
+        return to;
     }
 
     public Map<SortType, Double> getTimestampRatio() {
