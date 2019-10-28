@@ -2,48 +2,62 @@
 <html>
 <head>
     <meta charset='utf-8'>
-    <title>$page_title</title>
+    <title>Test report</title>
     <script src='../libs/chart.js'></script>
     <script>
-        function createChart() {
-            var ctx = document.getElementById('chart');
-            var chart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: $labels,
-                    datasets: [{
-                        label: '$bar_label',
-                        backgroundColor: '#40a2db',
-                        data: $data,
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    title: {
-                        display: true,
-                            text: '$title'
+        var obj = JSON.parse('$data');
+        function createCharts() {
+            for(var len in obj) {
+                var ctx = document.getElementById('chart' + len);
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: Object.keys(obj[len]),
+                        datasets: [{
+                            label: "Time " + (len >= 1e4 ? " ms" : " ns"),
+                            backgroundColor: '#40a2db',
+                            data: Object.values(obj[len]),
+                            borderWidth: 0
+                        }]
                     },
-                    legend: {
-                        display: false
-                    },
-                    responsive: true,
-                    maintainAspectRatio: false
-                }
-            });
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'Test length ' + len + " (" + (len >= 1e4 ? "ms" : "ns") + ")"
+                        },
+                        legend: {
+                            display: false
+                        },
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                });
+            }
+        }
+        function renderCharts() {
+            for(var len in obj) {
+                document.getElementById("container").innerHTML +=
+                    "<div class=\"main_chart\">" +
+                    "     <canvas id='chart" + len + "'/>" +
+                    "</div>";
+            }
+            createCharts()
         }
     </script>
     <style>
+        html {
+            padding: 50px;
+        }
         .main_chart {
-            width: 95%;
-            height: 90%;
-            text-align: center;
-            position: absolute;
+            width: 550px;
+            height: 500px;
+            margin: 10px;
+            position: relative;
+            display: inline-block;
         }
     </style>
 </head>
-<body onload='createChart()'>
-    <div class="main_chart">
-        <canvas id='chart' />
-    </div>
+<body onload='renderCharts()'>
+    <div id="container"></div>
 </body>
 </html>

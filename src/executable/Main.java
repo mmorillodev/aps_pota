@@ -1,5 +1,6 @@
 package executable;
 
+import com.google.gson.Gson;
 import utils.io.CSVFactory;
 import utils.SortType;
 import utils.TestManager;
@@ -60,9 +61,8 @@ public class Main {
                 totalTimeBySortType.get(SortType.BUCKET_SORT)       + (size >= 1e4 ? " ms" : " ns"),
                 totalTimeBySortType.get(SortType.RADIX_SORT)        + (size >= 1e4 ? " ms" : " ns")
             );
-
-            buildChart(totalTimeBySortType, size);
         });
+        buildCharts(sizeToTotalTime);
         factory.close();
         
         long afterUsedMem = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
@@ -81,8 +81,8 @@ public class Main {
         );
     }
 
-    private static void buildChart(Map<SortType, Double> totalTimeBySortType, int size) {
-        File file = new File(R.string.REPORTS_FOLDER_ADDRESS + "/chart_size_" + size + ".html");
+    private static void buildCharts(Map<Integer, Map<SortType, Double>> sizeToTotalTime) {
+        File file = new File(R.string.REPORTS_FOLDER_ADDRESS + "/charts.html");
 
         try {
             file.createNewFile();
@@ -91,29 +91,13 @@ public class Main {
             FileLoader loader = new FileLoader(R.string.HTML_TEMPLATE_ADDRESS);
 
             String html = loader.loadAsString()
-                        .replace("$page_title", "Test length " + size)
-                        .replace("$labels", toString(R.value.SORT_LIST))
-                        .replace("$bar_label", "Time" + (size >= 1e4 ? " ms" : " ns"))
-                        .replace("$data", totalTimeBySortType.values().toString())
-                        .replace("$title", "Sort methods by time. Array size " + size);
+                        .replace("$data", new Gson().toJson(sizeToTotalTime));
 
             pw.print(html);
             loader.close();
             pw.close();
         } catch (IOException e) {
-            System.err.println("Failed creating file chart" + size + ".html\nError: " + e.getMessage());
+            System.err.println("Failed creating file charts.html\nError: " + e.getMessage());
         }
-    }
-
-    private static String toString(String[] sortTypes) {
-        final StringBuilder builder = new StringBuilder("[");
-
-        int i = 0;
-        for(String element : sortTypes) {
-            builder.append("'").append(element).append("'").append(i < sortTypes.length - 1 ? ", " : "");
-            i++;
-        }
-
-        return builder.append("]").toString();
     }
 }

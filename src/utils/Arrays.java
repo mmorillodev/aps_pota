@@ -79,7 +79,6 @@ public class Arrays {
         for (int i = n / 2 - 1; i >= 0; i--)
             heapify(arr, n, i);
 
-        int temp;
         for (int i=n-1; i>=0; i--) {
             swap(arr, 0, i);
 
