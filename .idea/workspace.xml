@@ -3,14 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="516a5954-08d0-4dcb-a021-13a601b88fd9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APS_POTA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/APS_POTA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/executable/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/executable/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/executable/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/executable/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/executable/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/executable/Tests.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/Arrays.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/Arrays.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/resources/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/resources/template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executable/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executable/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/executable/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executable/Tests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/Arrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Arrays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/resources/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/resources/template.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

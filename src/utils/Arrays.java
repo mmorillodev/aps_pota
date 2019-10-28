@@ -133,7 +133,26 @@ public class Arrays {
     }
 
     public static void countSort(int[] arr) {
+        int max = getMax(arr);
+        int min = getMin(arr);
+        int range = max - min + 1;
+        int[] count = new int[range];
+        int[] output = new int[arr.length];
 
+        for (int i = 0; i < arr.length; i++) {
+            count[arr[i] - min]++;
+        }
+
+        for (int i = 1; i < count.length; i++) {
+            count[i] += count[i - 1];
+        }
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            output[count[arr[i] - min] - 1] = arr[i];
+            count[arr[i] - min]--;
+        }
+
+        System.arraycopy(output, 0, arr, 0, arr.length);
     }
 
     public static void bucketSort(int[] arr) {
@@ -141,7 +160,10 @@ public class Arrays {
     }
 
     public static void radixSort(int[] arr) {
+        radixSort(arr, arr.length);
+    }
 
+    private static void radixSort(int[] arr, int n) {
     }
 
     public static int[] getIntArray(int length) {
@@ -167,6 +189,28 @@ public class Arrays {
         }
 
         return true;
+    }
+
+    private static int getMax(int[] arr) {
+        int max = arr[0];
+
+        for(int i = 1; i < arr.length; i++) {
+            if(arr[i] > max)
+                max = arr[i];
+        }
+
+        return max;
+    }
+
+    private static int getMin(int[] arr) {
+        int min = arr[0];
+
+        for(int i = 1; i < arr.length; i++) {
+            if(arr[i] < min)
+                min = arr[i];
+        }
+
+        return min;
     }
 
     private static void swap(int[] arr, int p1, int p2) {

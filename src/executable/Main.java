@@ -90,8 +90,7 @@ public class Main {
             PrintWriter pw = new PrintWriter(file);
             FileLoader loader = new FileLoader(R.string.HTML_TEMPLATE_ADDRESS);
 
-            String html = loader.loadAsString()
-                        .replace("$data", new Gson().toJson(sizeToTotalTime));
+            String html = loader.loadAsString().replace("$data", new Gson().toJson(sizeToTotalTime));
 
             pw.print(html);
             loader.close();

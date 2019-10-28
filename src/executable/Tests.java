@@ -16,7 +16,6 @@ import java.util.Map;
 public class Tests {
     public static void main(String[] args) throws InterruptedException {
         testSorts();
-        out.println(Arrays.toString(R.value.SORT_LIST));
 //        testMergeMaps();
 //        testFileLoader();
 //        testStopWatch();
