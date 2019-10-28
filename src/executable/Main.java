@@ -5,6 +5,7 @@ import utils.SortType;
 import utils.TestManager;
 import utils.io.FileLoader;
 import utils.io.ScannerUtils;
+import utils.resources.R;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,19 +19,10 @@ public class Main {
     public static void main(String[] args) {
         long beforeUsedMem = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         final CSVFactory factory = new CSVFactory(
-                System.getProperty("user.dir") + "\\reports\\report.csv",
-                "Test size",
-                "Bubble",
-                "Selection",
-                "Insertion",
-                "Merge",
-                "Heap",
-                "Quick",
-                "Count",
-                "Bucket",
-                "Radix"
+                R.string.REPORTS_FOLDER_ADDRESS + "/report.csv",
+                R.value.CSV_HEADERS
         );
-        final Set<Integer> sizesToTest = new HashSet<Integer>() {{
+        final Set<Integer> sizesToTest = new LinkedHashSet<Integer>() {{
             ScannerUtils scanner = new ScannerUtils();
             for(int entry = 1; entry > 0; ) {
                 entry = scanner.getInt("Enter the test length (greater than 0): ");
@@ -90,16 +82,17 @@ public class Main {
     }
 
     private static void buildChart(Map<SortType, Double> totalTimeBySortType, int size) {
-        File file = new File("./reports/chart_size_" + size + ".html");
+        File file = new File(R.string.REPORTS_FOLDER_ADDRESS + "/chart_size_" + size + ".html");
+
         try {
             file.createNewFile();
 
             PrintWriter pw = new PrintWriter(file);
-            FileLoader loader = new FileLoader(System.getProperty("user.dir") + "/src/utils/resources/template.html");
+            FileLoader loader = new FileLoader(R.string.HTML_TEMPLATE_ADDRESS);
 
             String html = loader.loadAsString()
                         .replace("$page_title", "Test length " + size)
-                        .replace("$labels", toString(totalTimeBySortType.keySet()))
+                        .replace("$labels", toString(R.value.SORT_LIST))
                         .replace("$bar_label", "Time" + (size >= 1e4 ? " ms" : " ns"))
                         .replace("$data", totalTimeBySortType.values().toString())
                         .replace("$title", "Sort methods by time. Array size " + size);
@@ -112,12 +105,12 @@ public class Main {
         }
     }
 
-    private static String toString(Set<SortType> sortTypes) {
+    private static String toString(String[] sortTypes) {
         final StringBuilder builder = new StringBuilder("[");
 
         int i = 0;
-        for(SortType element : sortTypes) {
-            builder.append("'").append(element).append("'").append(i < sortTypes.size() - 1 ? ", " : "");
+        for(String element : sortTypes) {
+            builder.append("'").append(element).append("'").append(i < sortTypes.length - 1 ? ", " : "");
             i++;
         }
 

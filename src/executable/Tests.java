@@ -3,6 +3,7 @@ package executable;
 import utils.SortType;
 import utils.StopWatch;
 import utils.io.FileLoader;
+import utils.resources.R;
 
 import static utils.Arrays.*;
 import static java.lang.System.out;
@@ -15,6 +16,7 @@ import java.util.Map;
 public class Tests {
     public static void main(String[] args) throws InterruptedException {
         testSorts();
+        out.println(Arrays.toString(R.value.SORT_LIST));
 //        testMergeMaps();
 //        testFileLoader();
 //        testStopWatch();

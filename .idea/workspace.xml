@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516a5954-08d0-4dcb-a021-13a601b88fd9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/resources/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/executable/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/executable/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/executable/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/executable/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/executable/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/executable/Tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/Arrays.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/Arrays.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/resources/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/resources/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/utils/SortType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/utils/SortType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/executable/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executable/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/executable/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executable/Tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Arrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Arrays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/resources/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/resources/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/SortType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/SortType.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +39,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -72,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Tests">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="executable.Main" />
       <module name="APS_POTA" />
@@ -89,8 +89,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Tests" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Tests" />
         <item itemvalue="Application.Tests" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Tests" />
