@@ -106,7 +106,31 @@ public class Arrays {
     }
 
     public static void quickSort(int[] arr) {
+        quickSort(arr, 0, arr.length-1);
+    }
 
+    private static void quickSort(int[] arr, int start, int end) {
+        if (start < end) {
+            int pivot = split(arr, start, end);
+            quickSort(arr, start, pivot - 1);
+            quickSort(arr, pivot + 1, end);
+        }
+    }
+
+    private static int split(int[] arr, int start, int end) {
+        int pivot = arr[start];
+        int i, j;
+        for (i = start + 1, j = end; i <= j; ) {
+            if (arr[i] <= pivot)
+                i++;
+            else if (pivot < arr[j])
+                j--;
+            else
+                swap(arr, i++, j--);
+        }
+        arr[start] = arr[j];
+        arr[j] = pivot;
+        return j;
     }
 
     public static void countSort(int[] arr) {
