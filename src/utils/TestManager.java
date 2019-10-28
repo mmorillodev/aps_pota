@@ -7,10 +7,10 @@ import java.util.Map;
 public class TestManager {
 
     private Map<SortType, Double> sortTypeToTimestamp;
-    private int[] arr;
+    private int arrSize;
 
     public TestManager(int arrSize) {
-        this.arr = Arrays.getIntArray(arrSize);
+        this.arrSize = arrSize;
         sortTypeToTimestamp = new HashMap<>();
     }
 
@@ -26,8 +26,9 @@ public class TestManager {
                 timestampRadix;
 
         StopWatch stopWatch = new StopWatch();
-
-        int[] aux = new int[arr.length];
+        
+        this.arr = Arrats.getIntArray(this.arrSize);
+        int[] aux = new int[this.arrSize];
         copyArrTo(aux);
 
         stopWatch.start();
