@@ -2,6 +2,10 @@ package util.io;
 
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.io.File;
 
@@ -22,6 +26,11 @@ public class CSVFactory {
         this.currentLine 	= 0;
 
         try {
+            String[] pathArr = directory.split("/");
+            Path path = Paths.get(String.join("/", Arrays.copyOfRange(pathArr, 0, pathArr.length - 1)));
+            if(!Files.exists(path))
+                Files.createDirectories(path);
+
             this.file.createNewFile();
             this.writer = new PrintWriter(this.file);
         } catch (IOException e) {
@@ -92,8 +101,8 @@ public class CSVFactory {
 
         //int recordsQtd = values.length % getHeaderLength();
 
-        addRecord(subList(values, 0, getHeaderLength()));
-        values = subList(values, getHeaderLength());
+        addRecord(Arrays.copyOfRange(values, 0, getHeaderLength()));
+        values = Arrays.copyOfRange(values, 0, getHeaderLength());
 
         addRecords(values);
     }
@@ -186,38 +195,5 @@ public class CSVFactory {
 
     private String addSlashes(String str) {
         return str.replace("\n", "\\\\n").replace("\t", "\\\\t").replace("\r", "\\\\r");
-    }
-
-    private Object[] subList(Object[] list, int start, int end) {
-        Object[] arr = new Object[end - start];
-
-        if(start > list.length || end > list.length) {
-            return arr;
-        }
-
-        if(start > end){
-            int aux = start;
-            start = end;
-            end = aux;
-        }
-
-        for(int i = start, j = 0; i < end; i++, j++) {
-            arr[j] = list[i];
-        }
-
-        return arr;
-    }
-
-    private Object[] subList(Object[] list, int start) {
-        Object[] arr = new Object[list.length - start];
-
-        if(start > list.length)
-            return arr;
-
-        for(int i = start, j = 0; j < arr.length; i++, j++) {
-            arr[j] = list[i];
-        }
-
-        return arr;
     }
 }

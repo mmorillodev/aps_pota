@@ -9,6 +9,9 @@ import resources.R;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Main {
@@ -92,6 +95,9 @@ public class Main {
         File file = new File(R.string.REPORTS_FOLDER_ADDRESS + "/charts.html");
 
         try {
+            Path path = Paths.get(R.string.REPORTS_FOLDER_ADDRESS);
+            if(!Files.exists(path))
+                Files.createDirectories(path);
             file.createNewFile();
 
             PrintWriter pw = new PrintWriter(file);
