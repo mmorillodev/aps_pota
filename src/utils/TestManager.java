@@ -123,7 +123,7 @@ public class TestManager {
     }
 
     public int size() {
-        return arr.length;
+        return arrSize;
     }
 
     public String toString() {
