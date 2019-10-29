@@ -31,6 +31,10 @@ public class Main {
             }
         }};
 
+        System.out.println("\n=====================================");
+        System.out.println("========  Starting execution  =======");
+        System.out.println("=====================================");
+
         Map<Integer, Map<SortType, Double>> sizeToTotalTime = new LinkedHashMap<>();
         TestManager currentTest;
 
@@ -66,6 +70,11 @@ public class Main {
         factory.close();
         
         long afterUsedMem = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+
+        System.out.println("\n=====================================");
+        System.out.println("========   End of execution   =======");
+        System.out.println("=====================================");
+
         System.out.println("Program used " + (afterUsedMem-beforeUsedMem)/1e6 + "MB");
     }
 
