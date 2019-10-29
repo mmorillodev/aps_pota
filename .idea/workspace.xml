@@ -3,13 +3,37 @@
   <component name="ChangeListManager">
     <list default="true" id="516a5954-08d0-4dcb-a021-13a601b88fd9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executable/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/executable/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/executable/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/executable/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Arrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/Arrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/SortType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/SortType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/StopWatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/TestManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/TestManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/io/CSVFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/io/CSVFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/io/FileLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/io/FileLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/io/ScannerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/io/ScannerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/resources/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/resources/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/general_vision.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -29,6 +53,7 @@
   </component>
   <component name="ProjectId" id="1SWBFPzbQA7BmzYcjeBDHnNVzQd" />
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -47,6 +72,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nescara\Java-projects\APS_POTA\templates" />
       <recent name="C:\Users\mathe\JavaExercicios\aps_pota\src\utils\resources" />
       <recent name="C:\Users\mathe\JavaExercicios\aps_pota\src\utils\file" />
       <recent name="C:\Users\Nescara\Java-projects\APS_POTA\libs" />
@@ -67,14 +93,14 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="executable.Main" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="APS_POTA" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Tests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="executable.Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests" />
       <module name="APS_POTA" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,7 +137,7 @@
       <workItem from="1572351988012" duration="1749000" />
       <workItem from="1572356622791" duration="1033000" />
       <workItem from="1572358295341" duration="80000" />
-      <workItem from="1572358617653" duration="8012000" />
+      <workItem from="1572358617653" duration="8996000" />
     </task>
     <servers />
   </component>
