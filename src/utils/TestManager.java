@@ -27,7 +27,7 @@ public class TestManager {
 
         StopWatch stopWatch = new StopWatch();
         
-        int[] arr = Arrats.getIntArray(this.arrSize);
+        int[] arr = Arrays.getIntArray(this.arrSize);
 
         stopWatch.start();
         Arrays.bubbleSort(copyArr(arr));
