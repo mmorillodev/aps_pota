@@ -13,7 +13,6 @@ public class R {
     }
 
     public static final class value {
-        public final static String[] SORT_LIST = SortType.toStringArray();
         public final static String[] CSV_HEADERS = {
                 "Test size",
                 "BUBBLE_SORT",
