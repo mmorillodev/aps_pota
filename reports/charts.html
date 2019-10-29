@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Array sorting reports</title>
+    <script src='../libs/chart.js'></script>
+    <script>
+        var obj = JSON.parse('{"5":{"BUCKET_SORT":498.4,"MERGE_SORT":4394.92,"BUBBLE_SORT":1850.1,"RADIX_SORT":362.48,"QUICK_SORT":3828.76,"INSERTION_SORT":1555.72,"COUNT_SORT":22866.24,"SELECTION_SORT":1638.66,"HEAP_SORT":2975.34},"50":{"BUCKET_SORT":286.96,"MERGE_SORT":9099.66,"BUBBLE_SORT":40484.3,"RADIX_SORT":264.34,"QUICK_SORT":6275.48,"INSERTION_SORT":22972.0,"COUNT_SORT":20978.44,"SELECTION_SORT":29556.94,"HEAP_SORT":6766.24},"100":{"BUCKET_SORT":415.46,"MERGE_SORT":22156.42,"BUBBLE_SORT":60156.22,"RADIX_SORT":430.44,"QUICK_SORT":15118.4,"INSERTION_SORT":28084.54,"COUNT_SORT":10836.54,"SELECTION_SORT":34707.26,"HEAP_SORT":10896.92},"1000":{"BUCKET_SORT":3367.98,"MERGE_SORT":234568.64,"BUBBLE_SORT":1362872.26,"RADIX_SORT":2975.3,"QUICK_SORT":89788.96,"INSERTION_SORT":365581.7,"COUNT_SORT":44554.66,"SELECTION_SORT":657988.42,"HEAP_SORT":137824.68},"10000":{"BUCKET_SORT":0.0148466,"MERGE_SORT":1.8324551,"BUBBLE_SORT":146.03829588,"RADIX_SORT":0.0140006,"QUICK_SORT":0.8627355999999999,"INSERTION_SORT":22.110815600000002,"COUNT_SORT":0.06614472,"SELECTION_SORT":34.61309242,"HEAP_SORT":1.14534764}}');
+        function createCharts() {
+            for(var len in obj) {
+                var ctx = document.getElementById('chart' + len);
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: Object.keys(obj[len]),
+                        datasets: [{
+                            label: "Time " + (len >= 1e4 ? " ms" : " ns"),
+                            backgroundColor: '#40a2db',
+                            data: Object.values(obj[len]),
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'Test length ' + len + " (" + (len >= 1e4 ? "ms" : "ns") + ")"
+                        },
+                        legend: {
+                            display: false
+                        },
+                        responsive: true,
+                        maintainAspectRatio: false
+                    }
+                });
+            }
+        }
+        function renderCharts() {
+            for(var len in obj) {
+                document.getElementById("container").innerHTML +=
+                    "<div class=\"main_chart\">" +
+                    "     <canvas id='chart" + len + "'/>" +
+                    "</div>";
+            }
+            createCharts()
+        }
+    </script>
+    <style>
+        html {
+            padding: 50px;
+        }
+        .main_chart {
+            width: 550px;
+            height: 500px;
+            margin: 10px;
+            position: relative;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body onload='renderCharts()'>
+    <div id="container"></div>
+</body>
+</html>

@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516a5954-08d0-4dcb-a021-13a601b88fd9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_8_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executable/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/executable/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Arrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/Arrays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/SortType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/SortType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/StopWatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/TestManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/TestManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/io/CSVFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/io/CSVFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/io/FileLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/io/FileLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/io/ScannerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/io/ScannerUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/resources/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/R.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/resources/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/general_vision.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +130,7 @@
       <workItem from="1572351988012" duration="1749000" />
       <workItem from="1572356622791" duration="1033000" />
       <workItem from="1572358295341" duration="80000" />
-      <workItem from="1572358617653" duration="8996000" />
+      <workItem from="1572358617653" duration="9249000" />
     </task>
     <servers />
   </component>
