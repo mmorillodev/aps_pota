@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516a5954-08d0-4dcb-a021-13a601b88fd9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/Arrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Arrays.java" afterDir="false" />
     </list>
@@ -66,7 +65,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Tests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="executable.Main" />
       <module name="APS_POTA" />
@@ -83,8 +82,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Tests" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Tests" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Tests" />
@@ -110,7 +109,9 @@
       <workItem from="1572137746027" duration="6215000" />
       <workItem from="1572206527460" duration="2398000" />
       <workItem from="1572351988012" duration="1749000" />
-      <workItem from="1572356622791" duration="437000" />
+      <workItem from="1572356622791" duration="1033000" />
+      <workItem from="1572358295341" duration="80000" />
+      <workItem from="1572358617653" duration="7633000" />
     </task>
     <servers />
   </component>

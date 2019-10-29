@@ -49,6 +49,7 @@ public class Arrays {
         for (int i = mid; i < n; i++) {
             r[i - mid] = arr[i];
         }
+
         mergeSort(l, mid);
         mergeSort(r, n - mid);
 
@@ -60,8 +61,7 @@ public class Arrays {
         while (i < left && j < right) {
             if (l[i] <= r[j]) {
                 a[k++] = l[i++];
-            }
-            else {
+            } else {
                 a[k++] = r[j++];
             }
         }
@@ -74,22 +74,21 @@ public class Arrays {
     }
 
     public static void heapSort(int[] arr) {
-        int n = arr.length;
+        int arrSize = arr.length;
 
-        for (int i = n / 2 - 1; i >= 0; i--)
-            heapify(arr, n, i);
+        for (int i = arrSize / 2 - 1; i >= 0; i--)
+            heapify(arr, arrSize, i);
 
-        for (int i=n-1; i>=0; i--) {
+        for (int i = arrSize - 1; i >= 0; i--) {
             swap(arr, 0, i);
-
             heapify(arr, i, 0);
         }
     }
 
     private static void heapify(int[] arr, int n, int i) {
         int largest = i;
-        int left = 2*i + 1;
-        int right = 2*i + 2;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
 
         if (left < n && arr[left] > arr[largest])
             largest = left;
@@ -99,7 +98,6 @@ public class Arrays {
 
         if (largest != i) {
             swap(arr, i, largest);
-
             heapify(arr, n, largest);
         }
     }
@@ -127,8 +125,7 @@ public class Arrays {
             else
                 swap(arr, i++, j--);
         }
-        arr[start] = arr[j];
-        arr[j] = pivot;
+        swap(arr, start, j);
         return j;
     }
 
