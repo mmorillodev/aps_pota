@@ -167,7 +167,7 @@ public class Arrays {
         int[] arr = new int[length];
 
         for(int i = 0; i < length; i++) {
-            arr[i] = getRandom(0, 1000);
+            arr[i] = getRandom(0, length);
         }
 
         return arr;
