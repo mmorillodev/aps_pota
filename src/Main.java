@@ -6,6 +6,7 @@ import util.io.FileLoader;
 import util.io.ScannerUtils;
 import resources.R;
 
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -96,7 +97,8 @@ public class Main {
             Path path = Paths.get(R.string.REPORTS_FOLDER_ADDRESS);
             if(!Files.exists(path))
                 Files.createDirectories(path);
-            file.createNewFile();
+            if(!file.exists())
+                file.createNewFile();
 
             PrintWriter pw = new PrintWriter(file);
             FileLoader loader = new FileLoader(R.string.HTML_TEMPLATE_ADDRESS);
@@ -106,6 +108,9 @@ public class Main {
             pw.print(html);
             loader.close();
             pw.close();
+
+            //Open HTML File
+            Desktop.getDesktop().browse(file.toURI());
         } catch (IOException e) {
             System.err.println("Failed creating file charts.html\nError: " + e.getMessage());
         }
