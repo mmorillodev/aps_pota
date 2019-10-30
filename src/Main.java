@@ -16,8 +16,6 @@ import java.util.*;
 
 public class Main {
 
-    private static final int QTD_TESTS = 50;
-
     public static void main(String[] args) {
         long beforeUsedMem = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         final CSVFactory factory = new CSVFactory(
@@ -42,7 +40,7 @@ public class Main {
         for(int currentSize : sizesToTest) {
             currentTest = new TestManager(currentSize);
             sizeToTotalTime.put(currentSize, new HashMap<>());
-            for(int i = 0; i < QTD_TESTS; i++) {
+            for(int i = 0; i < R.value.QTD_TESTS; i++) {
                 currentTest.trigger();
                 currentTest.getTimestampRatio().forEach((key, value) ->
                     sizeToTotalTime.get(currentSize).merge(key, value, Double::sum)
@@ -81,7 +79,7 @@ public class Main {
 
     private static void setAverages(Map<SortType, Double> totalTimeBySortType) {
         totalTimeBySortType.forEach(((sortType, totalTime) ->
-                totalTimeBySortType.put(sortType, totalTimeBySortType.get(sortType)/QTD_TESTS))
+                totalTimeBySortType.put(sortType, totalTimeBySortType.get(sortType)/R.value.QTD_TESTS))
         );
     }
 
