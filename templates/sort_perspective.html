@@ -6,24 +6,25 @@
     <script src='../libs/chart.js'></script>
     <script>
         var obj = JSON.parse('$data');
+        obj = mutate(obj);
         function createCharts() {
-            for(var len in obj) {
-                var ctx = document.getElementById('chart' + len);
+            for(var sortType in obj) {
+                var ctx = document.getElementById('chart' + sortType);
                 new Chart(ctx, {
-                    type: 'bar',
+                    type: 'line',
                     data: {
-                        labels: Object.keys(obj[len]),
+                        labels: Object.keys(obj[sortType]),
                         datasets: [{
-                            label: "Time " + (len >= 1e4 ? " ms" : " ns"),
-                            backgroundColor: '#40a2db',
-                            data: Object.values(obj[len]),
+                            data: Object.values(obj[sortType]),
+                            borderColor: 'rgba(200, 50, 50, 0.9)',
+                            backgroundColor: 'rgba(230, 100, 100, 0.1)',
                             borderWidth: 0
                         }]
                     },
                     options: {
                         title: {
                             display: true,
-                            text: 'Test length ' + len + " (" + (len >= 1e4 ? "ms" : "ns") + ")"
+                            text: sortType
                         },
                         legend: {
                             display: false
@@ -41,7 +42,24 @@
                     "     <canvas id='chart" + len + "'/>" +
                     "</div>";
             }
-            createCharts()
+            createCharts();
+        }
+        function mutate(object) {
+            var newObj = {};
+            Object.keys(object).forEach(currentLen => {
+                Object.keys(object[currentLen]).forEach(sortType => {
+                    if(newObj[sortType] === undefined) {
+                        newObj[sortType] = {};
+                    }
+                    if(newObj[sortType][currentLen] === undefined) {
+                        newObj[sortType][currentLen] = object[currentLen][sortType] * (currentLen >= 1e4 ? 1e6 : 1);
+                    }
+                    else {
+                        newObj[sortType][currentLen] += object[currentLen][sortType] * (currentLen >= 1e4 ? 1e6 : 1);
+                    }
+                });
+            });
+            return newObj;
         }
     </script>
     <style>

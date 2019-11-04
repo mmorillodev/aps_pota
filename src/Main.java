@@ -35,21 +35,21 @@ public class Main {
         System.out.println("========  Starting execution  =======");
         System.out.println("=====================================");
 
-        Map<Integer, Map<SortType, Double>> sizeToTotalTime = new LinkedHashMap<>();
+        Map<Integer, Map<SortType, Double>> sizeToTimestampRatio = new LinkedHashMap<>();
         TestManager currentTest;
 
         for(int currentSize : sizesToTest) {
             currentTest = new TestManager(currentSize);
-            sizeToTotalTime.put(currentSize, new HashMap<>());
+            sizeToTimestampRatio.put(currentSize, new HashMap<>());
             for(int i = 0; i < R.value.QTD_TESTS; i++) {
                 currentTest.trigger();
                 currentTest.getTimestampRatio().forEach((key, value) ->
-                    sizeToTotalTime.get(currentSize).merge(key, value, Double::sum)
+                    sizeToTimestampRatio.get(currentSize).merge(key, value, Double::sum)
                 );
             }
         }
 
-        sizeToTotalTime.forEach((size, totalTimeBySortType) -> {
+        sizeToTimestampRatio.forEach((size, totalTimeBySortType) -> {
             setAverages(totalTimeBySortType);
             setScientificNotation(totalTimeBySortType, size);
 
@@ -66,7 +66,7 @@ public class Main {
                 totalTimeBySortType.get(SortType.RADIX_SORT)        + (size >= 1e4 ? " ms" : " ns")
             );
         });
-        buildCharts(sizeToTotalTime);
+        buildCharts(sizeToTimestampRatio);
         factory.close();
         
         long afterUsedMem = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
@@ -91,8 +91,22 @@ public class Main {
     }
 
     private static void buildCharts(Map<Integer, Map<SortType, Double>> sizeToTotalTime) {
-        File file = new File(R.string.REPORTS_FOLDER_ADDRESS + "/charts.html");
+        File file = new File(R.string.REPORTS_FOLDER_ADDRESS + "/default_charts.html");
+        File file2 = new File(R.string.REPORTS_FOLDER_ADDRESS + "/charts_sort_perspective.html");
+        Gson json = new Gson();
 
+        loadAndWrite(file, R.string.GENERAL_VISION_TEMPLATE_ADDRESS, json.toJson(sizeToTotalTime));
+        loadAndWrite(file2, R.string.SORT_PERSPECTIVE_TEMPLATE_ADDRESS, json.toJson(sizeToTotalTime));
+
+        try {
+            Desktop.getDesktop().browse(file.toURI());
+            Desktop.getDesktop().browse(file2.toURI());
+        } catch (IOException e) {
+            System.err.println("Failed opening the charts");
+        }
+    }
+
+    private static void loadAndWrite(File file, String template, String data) {
         try {
             Path path = Paths.get(R.string.REPORTS_FOLDER_ADDRESS);
             if(!Files.exists(path))
@@ -101,18 +115,15 @@ public class Main {
                 file.createNewFile();
 
             PrintWriter pw = new PrintWriter(file);
-            FileLoader loader = new FileLoader(R.string.HTML_TEMPLATE_ADDRESS);
+            FileLoader loader = new FileLoader(template);
 
-            String html = loader.loadAsString().replace("$data", new Gson().toJson(sizeToTotalTime));
+            String html = loader.loadAsString().replace("$data", data);
 
             pw.print(html);
             loader.close();
             pw.close();
-
-            //Open HTML File
-            Desktop.getDesktop().browse(file.toURI());
         } catch (IOException e) {
-            System.err.println("Failed creating file charts.html\nError: " + e.getMessage());
+            System.err.println("Failed creating file " + file.getName() + "\nError: " + e.getMessage());
         }
     }
 }

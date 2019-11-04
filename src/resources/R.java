@@ -2,11 +2,13 @@ package resources;
 
 public class R {
     public static final class string {
-        public final static String HTML_TEMPLATE_ADDRESS;
+        public final static String GENERAL_VISION_TEMPLATE_ADDRESS;
         public final static String REPORTS_FOLDER_ADDRESS;
+        public final static String SORT_PERSPECTIVE_TEMPLATE_ADDRESS;
 
         static {
-            HTML_TEMPLATE_ADDRESS = System.getProperty("user.dir") + "/templates/general_vision.html";
+            GENERAL_VISION_TEMPLATE_ADDRESS = System.getProperty("user.dir") + "/templates/general_vision.html";
+            SORT_PERSPECTIVE_TEMPLATE_ADDRESS = System.getProperty("user.dir") + "/templates/sort_perspective.html";
             REPORTS_FOLDER_ADDRESS = System.getProperty("user.dir") + "/reports";
         }
     }
