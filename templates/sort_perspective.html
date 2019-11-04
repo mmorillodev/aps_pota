@@ -29,6 +29,25 @@
                         legend: {
                             display: false
                         },
+                        scales: {
+                            xAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Array size'
+                                }
+                            }],
+                            yAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Nanoseconds'
+                                },
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }]
+                        },
                         responsive: true,
                         maintainAspectRatio: false
                     }
@@ -46,8 +65,8 @@
         }
         function mutate(object) {
             var newObj = {};
-            Object.keys(object).forEach(currentLen => {
-                Object.keys(object[currentLen]).forEach(sortType => {
+            Object.keys(object).forEach(function(currentLen) {
+                Object.keys(object[currentLen]).forEach(function(sortType) {
                     if(newObj[sortType] === undefined) {
                         newObj[sortType] = {};
                     }

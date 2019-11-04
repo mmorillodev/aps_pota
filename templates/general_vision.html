@@ -15,7 +15,7 @@
                         labels: Object.keys(obj[len]),
                         datasets: [{
                             label: "Time " + (len >= 1e4 ? " ms" : " ns"),
-                            backgroundColor: '#40a2db',
+                            backgroundColor: 'rgba(200, 50, 50, 0.8)',
                             data: Object.values(obj[len]),
                             borderWidth: 0
                         }]
@@ -23,10 +23,29 @@
                     options: {
                         title: {
                             display: true,
-                            text: 'Test length ' + len + " (" + (len >= 1e4 ? "ms" : "ns") + ")"
+                            text: 'Test size ' + len + " (" + (len >= 1e4 ? "ms" : "ns") + ")"
                         },
                         legend: {
                             display: false
+                        },
+                        scales: {
+                            xAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Sort type'
+                                }
+                            }],
+                            yAxes: [{
+                                display: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: (len >= 1e4 ? "Milliseconds" : "Nanoseconds")
+                                },
+                                ticks: {
+                                    beginAtZero: true,
+                                }
+                            }]
                         },
                         responsive: true,
                         maintainAspectRatio: false
