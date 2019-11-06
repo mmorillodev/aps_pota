@@ -2,8 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="516a5954-08d0-4dcb-a021-13a601b88fd9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/util/io/ChartBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/direct_sort_comparison.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/general_vision.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/general_vision.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/Tests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/helper/TestManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/APS_POTA/helper/TestManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/resources/R$string.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/resources/R$value.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/resources/R.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/APS_POTA/resources/SortType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helper/TestManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/TestManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resource/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/SortType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resource/SortType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/sort_perspective.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sort_perspective.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -133,6 +146,7 @@
       <workItem from="1572394149794" duration="513000" />
       <workItem from="1572536583736" duration="4992000" />
       <workItem from="1572897692221" duration="1779000" />
+      <workItem from="1573002106811" duration="3615000" />
     </task>
     <servers />
   </component>

@@ -1,10 +1,10 @@
 import com.google.gson.Gson;
 import util.io.CSVFactory;
-import resources.SortType;
+import resource.SortType;
 import helper.TestManager;
 import util.io.FileLoader;
 import util.io.ScannerUtils;
-import resources.R;
+import resource.R;
 
 import java.awt.*;
 import java.io.File;
@@ -95,8 +95,8 @@ public class Main {
         File file2 = new File(R.string.REPORTS_FOLDER_ADDRESS + "/charts_sort_perspective.html");
         Gson json = new Gson();
 
-        loadAndWrite(file, R.string.GENERAL_VISION_TEMPLATE_ADDRESS, json.toJson(sizeToTotalTime));
-        loadAndWrite(file2, R.string.SORT_PERSPECTIVE_TEMPLATE_ADDRESS, json.toJson(sizeToTotalTime));
+        loadAndWrite(file, R.template.GENERAL_VISION, json.toJson(sizeToTotalTime));
+        loadAndWrite(file2, R.template.SORT_PERSPECTIVE, json.toJson(sizeToTotalTime));
 
         try {
             Desktop.getDesktop().browse(file.toURI());

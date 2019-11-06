@@ -1,15 +1,23 @@
-package resources;
+package resource;
 
 public class R {
     public static final class string {
-        public final static String GENERAL_VISION_TEMPLATE_ADDRESS;
-        public final static String REPORTS_FOLDER_ADDRESS;
-        public final static String SORT_PERSPECTIVE_TEMPLATE_ADDRESS;
+        public static final String REPORTS_FOLDER_ADDRESS;
 
         static {
-            GENERAL_VISION_TEMPLATE_ADDRESS = System.getProperty("user.dir") + "/templates/general_vision.html";
-            SORT_PERSPECTIVE_TEMPLATE_ADDRESS = System.getProperty("user.dir") + "/templates/sort_perspective.html";
             REPORTS_FOLDER_ADDRESS = System.getProperty("user.dir") + "/reports";
+        }
+    }
+
+    public static final class template {
+        public final static String GENERAL_VISION;
+        public final static String SORT_PERSPECTIVE;
+        public static final String DIRECT_SORT_COMPARISON;
+
+        static {
+            GENERAL_VISION = System.getProperty("user.dir") + "/templates/general_vision.html";
+            SORT_PERSPECTIVE = System.getProperty("user.dir") + "/templates/sort_perspective.html";
+            DIRECT_SORT_COMPARISON = System.getProperty("user.dir") + "/templates/direct_sort_comparison.html";
         }
     }
 

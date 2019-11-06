@@ -1,6 +1,6 @@
 package helper;
 
-import resources.SortType;
+import resource.SortType;
 
 import static java.lang.System.arraycopy;
 import java.util.HashMap;

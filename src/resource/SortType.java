@@ -1,4 +1,4 @@
-package resources;
+package resource;
 
 public enum SortType {
     SELECTION_SORT("SELECTION_SORT"),

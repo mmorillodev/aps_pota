@@ -1,4 +1,4 @@
-import resources.SortType;
+import resource.SortType;
 import helper.StopWatch;
 import util.io.FileLoader;
 
@@ -15,7 +15,12 @@ public class Tests {
         //testSorts();
 //        testMergeMaps();
 //        testFileLoader();
-        testStopWatch();
+//        testStopWatch();
+        testReflect();
+    }
+
+    public static void testReflect() {
+        out.println(resource.R.template.class.getName());
     }
 
     public static void testFileLoader() {
