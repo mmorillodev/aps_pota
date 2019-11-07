@@ -16,11 +16,6 @@ public class Tests {
 //        testMergeMaps();
 //        testFileLoader();
 //        testStopWatch();
-        testReflect();
-    }
-
-    public static void testReflect() {
-        out.println(resource.R.template.class.getName());
     }
 
     public static void testFileLoader() {

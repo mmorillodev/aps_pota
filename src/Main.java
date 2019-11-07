@@ -93,14 +93,17 @@ public class Main {
     private static void buildCharts(Map<Integer, Map<SortType, Double>> sizeToTotalTime) {
         File file = new File(R.string.REPORTS_FOLDER_ADDRESS + "/default_charts.html");
         File file2 = new File(R.string.REPORTS_FOLDER_ADDRESS + "/charts_sort_perspective.html");
+        File file3 = new File(R.string.REPORTS_FOLDER_ADDRESS + "/direct_sort_comparison.html");
         Gson json = new Gson();
 
         loadAndWrite(file, R.template.GENERAL_VISION, json.toJson(sizeToTotalTime));
         loadAndWrite(file2, R.template.SORT_PERSPECTIVE, json.toJson(sizeToTotalTime));
+        loadAndWrite(file3, R.template.DIRECT_SORT_COMPARISON, json.toJson(sizeToTotalTime));
 
         try {
             Desktop.getDesktop().browse(file.toURI());
             Desktop.getDesktop().browse(file2.toURI());
+            Desktop.getDesktop().browse(file3.toURI());
         } catch (IOException e) {
             System.err.println("Failed opening the charts");
         }
