@@ -6,6 +6,7 @@
     <script src='../libs/chart.js'></script>
     <script>
         var obj = JSON.parse('$data');
+        setNotations(obj);
         function createCharts() {
             for(var len in obj) {
                 var ctx = document.getElementById('chart' + len);
@@ -52,6 +53,13 @@
                     }
                 });
             }
+        }
+        function setNotations(obj) {
+            Object.keys(obj).forEach(function (currentSize) {
+                Object.keys(obj[currentSize]).forEach(function (sortType) {
+                    obj[currentSize][sortType] /= currentSize >= 1e4 ? 1e6 : 1;
+                });
+            });
         }
         function renderCharts() {
             for(var len in obj) {

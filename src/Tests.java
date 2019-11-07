@@ -16,6 +16,13 @@ public class Tests {
 //        testMergeMaps();
 //        testFileLoader();
 //        testStopWatch();
+        numberGenericsHandling();
+    }
+
+    public static void numberGenericsHandling() {
+        Number n1 = new Long(300024);
+
+        out.println(n1.longValue()/1e3);
     }
 
     public static void testFileLoader() {
@@ -53,13 +60,13 @@ public class Tests {
         Thread.sleep(1000);
         watch.stop();
 
-        out.println(watch.getResultant(true));
+        out.println(watch.getResultantNano());
 
         watch.resume();
         Thread.sleep(2000);
         watch.stop();
 
-        out.println(watch.getResultant(true));
+        out.println(watch.getResultantNano());
     }
 
     public static void testSorts() {

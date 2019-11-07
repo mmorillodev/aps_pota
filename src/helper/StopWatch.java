@@ -2,8 +2,8 @@ package helper;
 
 public class StopWatch {
 
-    private double resultant_time;
-    private double initial;
+    private long resultant_time;
+    private long initial;
 
     public void start() {
         resultant_time = 0;
@@ -18,7 +18,11 @@ public class StopWatch {
         initial = System.nanoTime();
     }
 
-    public double getResultant(boolean milli) {
-        return (milli ? resultant_time/1e6 : resultant_time);
+    public long getResultantNano() {
+        return resultant_time;
+    }
+
+    public double getResultantMilli() {
+        return resultant_time/1e6;
     }
 }

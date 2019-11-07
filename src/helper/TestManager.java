@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class TestManager {
 
-    private Map<SortType, Double> sortTypeToTimestamp;
+    private Map<SortType, Long> sortTypeToTimestamp;
     private int arrSize;
 
     public TestManager(int arrSize) {
@@ -17,7 +17,7 @@ public class TestManager {
     }
 
     public void trigger() {
-        double  timestampBubble,
+        long  timestampBubble,
                 timestampSelection,
                 timestampInsertion,
                 timestampHeap,
@@ -35,7 +35,7 @@ public class TestManager {
         Arrays.bubbleSort(copyArr(arr));
         stopWatch.stop();
 
-        timestampBubble = stopWatch.getResultant(false);
+        timestampBubble = stopWatch.getResultantNano();
 
         //-------------------------------------------------------------
 
@@ -43,7 +43,7 @@ public class TestManager {
         Arrays.selectionSort(copyArr(arr));
         stopWatch.stop();
 
-        timestampSelection = stopWatch.getResultant(false);
+        timestampSelection = stopWatch.getResultantNano();
 
         //-------------------------------------------------------------
 
@@ -51,7 +51,7 @@ public class TestManager {
         Arrays.insertionSort(copyArr(arr));
         stopWatch.stop();
 
-        timestampInsertion = stopWatch.getResultant(false);
+        timestampInsertion = stopWatch.getResultantNano();
 
         //-------------------------------------------------------------
 
@@ -59,7 +59,7 @@ public class TestManager {
         Arrays.heapSort(copyArr(arr));
         stopWatch.stop();
 
-        timestampHeap = stopWatch.getResultant(false);
+        timestampHeap = stopWatch.getResultantNano();
 
         //-------------------------------------------------------------
 
@@ -67,7 +67,7 @@ public class TestManager {
         Arrays.mergeSort(copyArr(arr));
         stopWatch.stop();
 
-        timestampMerge = stopWatch.getResultant(false);
+        timestampMerge = stopWatch.getResultantNano();
 
         //-------------------------------------------------------------
 
@@ -75,7 +75,7 @@ public class TestManager {
         Arrays.quickSort(copyArr(arr));
         stopWatch.stop();
 
-        timestampQuick = stopWatch.getResultant(false);
+        timestampQuick = stopWatch.getResultantNano();
 
         //-------------------------------------------------------------
 
@@ -83,7 +83,7 @@ public class TestManager {
         Arrays.countSort(copyArr(arr));
         stopWatch.stop();
 
-        timestampCount = stopWatch.getResultant(false);
+        timestampCount = stopWatch.getResultantNano();
 
         //-------------------------------------------------------------
 
@@ -91,7 +91,7 @@ public class TestManager {
         Arrays.bucketSort(copyArr(arr));
         stopWatch.stop();
 
-        timestampBucket = stopWatch.getResultant(false);
+        timestampBucket = stopWatch.getResultantNano();
 
         //-------------------------------------------------------------
 
@@ -99,7 +99,7 @@ public class TestManager {
         Arrays.radixSort(copyArr(arr));
         stopWatch.stop();
 
-        timestampRadix = stopWatch.getResultant(false);
+        timestampRadix = stopWatch.getResultantNano();
 
         this.sortTypeToTimestamp.put(SortType.BUBBLE_SORT,      timestampBubble);
         this.sortTypeToTimestamp.put(SortType.SELECTION_SORT,   timestampSelection);
@@ -114,13 +114,13 @@ public class TestManager {
 
     private int[] copyArr(int[] from) {
         int[] to = new int[from.length];
-        
+
         arraycopy(from, 0, to, 0, from.length);
         
         return to;
     }
 
-    public Map<SortType, Double> getTimestampRatio() {
+    public Map<SortType, Long> getTimestampRatio() {
         return sortTypeToTimestamp;
     }
 

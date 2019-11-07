@@ -70,10 +70,10 @@
                         newObj[sortType] = {};
                     }
                     if(newObj[sortType][currentLen] === undefined) {
-                        newObj[sortType][currentLen] = object[currentLen][sortType] * (currentLen >= 1e4 ? 1e6 : 1);
+                        newObj[sortType][currentLen] = object[currentLen][sortType];
                     }
                     else {
-                        newObj[sortType][currentLen] += object[currentLen][sortType] * (currentLen >= 1e4 ? 1e6 : 1);
+                        newObj[sortType][currentLen] += object[currentLen][sortType];
                     }
                 });
             });
