@@ -35,7 +35,7 @@ public class Main {
         System.out.println("========  Starting execution  =======");
         System.out.println("=====================================");
 
-        Map<Integer, Map<SortType, Number>> sizeToTimestampRatio = new LinkedHashMap<>();
+        Map<Integer, Map<SortType, Long>> sizeToTimestampRatio = new LinkedHashMap<>();
         TestManager currentTest;
 
         for(int currentSize : sizesToTest) {
@@ -44,7 +44,7 @@ public class Main {
             for(int i = 0; i < R.value.QTD_TESTS; i++) {
                 currentTest.trigger();
                 currentTest.getTimestampRatio().forEach((key, value) ->
-                    sizeToTimestampRatio.get(currentSize).merge(key, value, Main::sum)
+                    sizeToTimestampRatio.get(currentSize).merge(key, value, Long::sum)
                 );
             }
         }
@@ -53,15 +53,15 @@ public class Main {
             setAverages(totalTimeBySortType);
             factory.addRecord(
                 size,
-                totalTimeBySortType.get(SortType.BUBBLE_SORT)   .longValue()/(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
-                totalTimeBySortType.get(SortType.SELECTION_SORT).longValue()/(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
-                totalTimeBySortType.get(SortType.INSERTION_SORT).longValue()/(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
-                totalTimeBySortType.get(SortType.MERGE_SORT)    .longValue()/(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
-                totalTimeBySortType.get(SortType.HEAP_SORT)     .longValue()/(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
-                totalTimeBySortType.get(SortType.QUICK_SORT)    .longValue()/(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
-                totalTimeBySortType.get(SortType.COUNT_SORT)    .longValue()/(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
-                totalTimeBySortType.get(SortType.BUCKET_SORT)   .longValue()/(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
-                totalTimeBySortType.get(SortType.RADIX_SORT)    .longValue()/(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns")
+                totalTimeBySortType.get(SortType.BUBBLE_SORT)    /(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.SELECTION_SORT) /(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.INSERTION_SORT) /(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.MERGE_SORT)     /(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.HEAP_SORT)      /(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.QUICK_SORT)     /(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.COUNT_SORT)     /(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.BUCKET_SORT)    /(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns"),
+                totalTimeBySortType.get(SortType.RADIX_SORT)     /(size >= 1e4 ? 1e6 : 1) + (size >= 1e4 ? " ms" : " ns")
             );
         });
         buildCharts(sizeToTimestampRatio);
@@ -76,13 +76,13 @@ public class Main {
         System.out.println("Program used " + (afterUsedMem-beforeUsedMem)/1e6 + "MB");
     }
 
-    private static void setAverages(Map<SortType, Number> totalTimeBySortType) {
+    private static void setAverages(Map<SortType, Long> totalTimeBySortType) {
         totalTimeBySortType.forEach(((sortType, totalTime) ->
                 totalTimeBySortType.put(sortType, totalTimeBySortType.get(sortType).longValue()/R.value.QTD_TESTS))
         );
     }
 
-    private static void buildCharts(Map<Integer, Map<SortType, Number>> sizeToTotalTime) {
+    private static void buildCharts(Map<Integer, Map<SortType, Long>> sizeToTotalTime) {
         File file = new File(R.string.REPORTS_FOLDER_ADDRESS + "/default_charts.html");
         File file2 = new File(R.string.REPORTS_FOLDER_ADDRESS + "/charts_sort_perspective.html");
         File file3 = new File(R.string.REPORTS_FOLDER_ADDRESS + "/direct_sort_comparison.html");
@@ -120,9 +120,5 @@ public class Main {
         } catch (IOException e) {
             System.err.println("Failed creating file " + file.getName() + "\nError: " + e.getMessage());
         }
-    }
-
-    private static Number sum(Number n1, Number n2) {
-        return n1.longValue() + n2.longValue();
     }
 }
