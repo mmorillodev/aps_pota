@@ -78,7 +78,7 @@ public class Main {
 
     private static void setAverages(Map<SortType, Long> totalTimeBySortType) {
         totalTimeBySortType.forEach(((sortType, totalTime) ->
-                totalTimeBySortType.put(sortType, totalTimeBySortType.get(sortType).longValue()/R.value.QTD_TESTS))
+                totalTimeBySortType.put(sortType, totalTimeBySortType.get(sortType)/R.value.QTD_TESTS))
         );
     }
 
