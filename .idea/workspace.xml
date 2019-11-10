@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="516a5954-08d0-4dcb-a021-13a601b88fd9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/direct_sort_comparison.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/direct_sort_comparison.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sort_perspective.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sort_perspective.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helper/Arrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helper/Arrays.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +136,7 @@
       <workItem from="1573086030136" duration="567000" />
       <workItem from="1573089244281" duration="404000" />
       <workItem from="1573089682589" duration="4160000" />
-      <workItem from="1573397296600" duration="3677000" />
+      <workItem from="1573397296600" duration="5015000" />
     </task>
     <servers />
   </component>

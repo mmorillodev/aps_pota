@@ -136,8 +136,8 @@ public class Arrays {
         int[] count = new int[range];
         int[] output = new int[arr.length];
 
-        for (int i = 0; i < arr.length; i++) {
-            count[arr[i] - min]++;
+        for (int value : arr) {
+            count[value - min]++;
         }
 
         for (int i = 1; i < count.length; i++) {
@@ -152,15 +152,14 @@ public class Arrays {
         System.arraycopy(output, 0, arr, 0, arr.length);
     }
 
+    //TODO
     public static void bucketSort(int[] arr) {
 
     }
 
+    //TODO
     public static void radixSort(int[] arr) {
-        radixSort(arr, arr.length);
-    }
 
-    private static void radixSort(int[] arr, int n) {
     }
 
     public static int[] getIntArray(int length) {
