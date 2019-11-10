@@ -1,12 +1,12 @@
 import com.google.gson.Gson;
-import util.io.CSVFactory;
-import resource.SortType;
 import helper.TestManager;
+import util.io.CSVFactory;
 import util.io.FileLoader;
 import util.io.ScannerUtils;
+import resource.SortType;
 import resource.R;
 
-import java.awt.*;
+import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
