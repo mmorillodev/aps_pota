@@ -1,5 +1,8 @@
 package helper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Arrays {
 
     public static void bubbleSort(int[] arr) {
@@ -152,14 +155,79 @@ public class Arrays {
         System.arraycopy(output, 0, arr, 0, arr.length);
     }
 
-    //TODO
     public static void bucketSort(int[] arr) {
+        //Verify input
+        if (arr == null || arr.length == 0)
+            return;
 
+        //Find the maximum and minimum values in the array
+        int maxValue = getMax(arr); //start with first element
+        int minValue = getMin(arr);
+
+        //Create a temporary bucket
+        List<Integer>[] bucket = new List[maxValue - minValue + 1];
+
+        //Initialize the bucket
+        for (int i = 0; i < bucket.length; i++) {
+            bucket[i] = new ArrayList<>();
+        }
+
+        //Move items to bucket
+        for (int value : arr) {
+            bucket[value - minValue].add(value);
+        }
+
+        //Move items in the bucket back to the original array in order
+        int k = 0; //index for original array
+        for (List<Integer> bucketValues : bucket) {
+            if (bucketValues.size() > 0) {
+                for (Integer bucketValue : bucketValues) {
+                    arr[k] = bucketValue;
+                    k++;
+                }
+            }
+        }
     }
 
-    //TODO
     public static void radixSort(int[] arr) {
+        int max = getMax(arr);
+        for (int exp = 1; max / exp > 0; exp *= 10) {
+            countSort(arr, arr.length, exp);
+        }
+    }
 
+    //This is a modified version of Counting Sort
+    private static void countSort(int[] array, int length, int exponent) {
+        //Create a new "output" array
+        int[] output = new int[length]; // output array
+        int i;
+
+        //Create a new "counting" array which stores the count of each unique number
+        int[] count = new int[10];
+        for (i = 0; i < 10; i++) {
+            count[i] = 0;
+        }
+        for (i = 0; i < length; i++) {
+            count[(array[i] / exponent) % 10]++;
+        }
+
+        //Change count[i] so that count[i] now contains actual position of
+        //this character in the output array.
+        for (i = 1; i < 10; i++) {
+            count[i] += count[i - 1];
+        }
+
+        //Build the output array.
+        //This is the tricky part.
+        for (i = length - 1; i >= 0; i--) {
+            output[count[(array[i] / exponent) % 10] - 1] = array[i];
+            count[(array[i] / exponent) % 10]--;
+        }
+
+        //Copy the output array to the final array.
+        for (i = 0; i < length; i++) {
+            array[i] = output[i];
+        }
     }
 
     public static int[] getIntArray(int length) {

@@ -12,11 +12,11 @@ import java.util.Map;
 
 public class Tests {
     public static void main(String[] args) throws InterruptedException {
-        //testSorts();
+        testSorts();
 //        testMergeMaps();
 //        testFileLoader();
 //        testStopWatch();
-        numberGenericsHandling();
+//        numberGenericsHandling();
     }
 
     public static void numberGenericsHandling() {
